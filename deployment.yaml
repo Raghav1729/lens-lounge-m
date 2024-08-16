@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lens-lounge-m
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: lens-lounge-m
+  template:
+    metadata:
+      labels:
+        app: lens-lounge-m
+    spec:
+      containers:
+        - name: lens-lounge-m
+          image: sergehall/lens-lounge-m
+          resources:
+            requests:
+              memory: "128Mi"
+
+              cpu: "125m"
+            limits:
+              memory: "256Mi"
+              cpu: "250m"
+          ports:
+            - containerPort: 5001
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 5001
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 5001
+            initialDelaySeconds: 30
+            periodSeconds: 10
+      restartPolicy: Always
