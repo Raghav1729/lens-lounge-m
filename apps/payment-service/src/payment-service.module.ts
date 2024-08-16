@@ -20,7 +20,6 @@ import { PaymentServiceController } from './api/payment-service.controller';
 
 const paymentUseCases = [BuyProductsUseCase];
 const paymentConfigs = [NodeEnvConfig, StripeConfig, PostgresConfig];
-
 const helpers = [UuidErrorResolver];
 
 @Module({
