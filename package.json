@@ -4,7 +4,7 @@
   "description": "NestJS app by typeorm and postgresql DB. My first steps work with NodeJS, Express, NestJS, Swagger, MongoDB, PostgreSQL, Microservices, RabbitMQ, WebSocket, DevOps basics (docker + kubernetes + jenkins), SOLID, Hexagonal architecture, SAGA,front-end basics.",
   "author": "Serge Hall",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "It_Incubator",
   "packageManager": "yarn@4.2.2",
   "engines": {
     "yarn": "4.2.2",
@@ -12,22 +12,21 @@
     "node": "20.11.1"
   },
   "scripts": {
-    "prebuild": "rimraf dist",
     "build": "nest build",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
     "start:dev": "NODE_ENV=development nest start --watch",
-    "start:dev.backend": "nest start backend --watch",
-    "start:dev.payment-service": "nest start payment-service --watch",
-    "start:dev.frontend": "nest start frontend --watch",
+    "start:dev.backend": "NODE_ENV=development nest start backend --watch",
+    "start:dev.payment-service": "NODE_ENV=development nest start payment-service --watch",
+    "start:dev.frontend": "NODE_ENV=development nest start frontend --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main.js",
+    "start:prod": "node dist/apps/backend/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/regiser -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest -i --detectOpenHandles --forceExit --config ./test/jest-e2e.json",
-    "generate-migrations": "node apps/backend/db/tools/generate-migration.js",
+    "generate-migrations": "node apps/backend/src/db/tools/generate-migration.js",
     "apply-migrations": "typeorm-ts-node-esm migration:run -d apps/backend/db/data-source.ts",
     "revert-last-migrations": "typeorm-ts-node-esm migration:revert -d apps/backend/db/data-source.ts"
   },
@@ -132,6 +131,9 @@
       "**/*.(t|j)s"
     ],
     "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/apps/"
+    ]
   }
 }

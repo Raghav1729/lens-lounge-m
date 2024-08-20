@@ -18,7 +18,7 @@ async function bootstrap() {
 
   // Start the application and listen on the specified port
   await app.listen(port, () => {
-    console.log(`Payment-service 1 app listening on port: ${port}`);
+    console.log(`Payment-service app listening on port: ${port}`);
   });
 
   const baseUrl = await app.getUrl();
