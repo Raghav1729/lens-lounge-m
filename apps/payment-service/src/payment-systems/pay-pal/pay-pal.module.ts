@@ -14,8 +14,8 @@ import { QuestionsQuizEntity } from '../../../../backend/src/features/sa-quiz-qu
 import { ChallengeQuestionsEntity } from '../../../../backend/src/features/pair-game-quiz/entities/challenge-questions.entity';
 import { PaymentTransactionsEntity } from '../../../../backend/src/features/products/entities/payment-transaction.entity';
 import { OrdersEntity } from '../../../../backend/src/features/products/entities/orders.entity';
-import { KeyResolver } from '../../../../libs/common/helpers/key-resolver';
-import { UuidErrorResolver } from '../../../../libs/common/helpers/uuid-error-resolver';
+import { KeyResolver } from '../../../../libs/shared/common/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../libs/shared/common/helpers/uuid-error-resolver';
 import { PayPalAdapter } from './adapter/pay-pal.adapter';
 import { PayPalFactory } from '../../config/pay-pal/pay-pal-factory';
 import { PayPalConfig } from '../../config/pay-pal/pay-pal.config';

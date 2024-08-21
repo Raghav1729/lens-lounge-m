@@ -14,8 +14,8 @@ import { NodeEnvConfig } from '../../backend/src/config/node-env/node-env.config
 import { ProductsDataEntity } from '../../backend/src/features/products/entities/products-data.entity';
 import { ProductsRepo } from '../../backend/src/features/products/infrastructure/products.repo';
 import { PaymentService } from './application/payment.service';
-import { LibsModule } from '../../libs/libs.module';
-import { UuidErrorResolver } from '../../libs/common/helpers/uuid-error-resolver';
+import { LibsModule } from '../../libs/shared/libs.module';
+import { UuidErrorResolver } from '../../libs/shared/common/helpers/uuid-error-resolver';
 import { PaymentServiceController } from './api/payment-service.controller';
 
 const paymentUseCases = [BuyProductsUseCase];

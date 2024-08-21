@@ -2,11 +2,18 @@
 /dist
 /node_modules
 
-/apps/payment-service/dist/
-/apps/payment-service/node_modules/
+/apps/backend/dist
+/apps/backend/node_modules
 
-/apps/backend/dist/
-/apps/backend/node_modules/
+/apps/frontend/dist
+/apps/frontend/node_modules
+
+/apps/payment-service/dist
+/apps/payment-service/node_modules
+
+/apps/libs/dist
+/apps/libs/node_modules
+
 
 # .env.dev environment variables file
 /.env.dev

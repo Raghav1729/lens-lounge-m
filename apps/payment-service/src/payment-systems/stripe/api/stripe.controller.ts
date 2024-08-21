@@ -12,7 +12,7 @@ import { ProcessStripeWebHookCommand } from '../application/use-cases/process-st
 import { Request } from 'express';
 import { ProcessStripeSuccessCommand } from '../application/use-cases/process-stripe-success.use-case';
 import { ApiTags } from '@nestjs/swagger';
-import { ParseQueriesService } from '../../../../../libs/common/query/parse-queries.service';
+import { ParseQueriesService } from '../../../../../libs/shared/common/query/parse-queries.service';
 import { IfGuestUsersGuard } from '../../../../../backend/src/features/auth/guards/if-guest-users.guard';
 import { ProductsRequestDto } from '../../../../../backend/src/features/products/dto/products-request.dto';
 import { PaymentLinkDto } from '../../../dto/payment-link.dto';
