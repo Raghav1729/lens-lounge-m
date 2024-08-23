@@ -14,8 +14,6 @@ import { QuestionsQuizEntity } from '../../../../backend/src/features/sa-quiz-qu
 import { ChallengeQuestionsEntity } from '../../../../backend/src/features/pair-game-quiz/entities/challenge-questions.entity';
 import { PaymentTransactionsEntity } from '../../../../backend/src/features/products/entities/payment-transaction.entity';
 import { OrdersEntity } from '../../../../backend/src/features/products/entities/orders.entity';
-import { KeyResolver } from '../../../../libs/shared/common/helpers/key-resolver';
-import { UuidErrorResolver } from '../../../../libs/shared/common/helpers/uuid-error-resolver';
 import { PayPalAdapter } from './adapter/pay-pal.adapter';
 import { PayPalFactory } from '../../config/pay-pal/pay-pal-factory';
 import { PayPalConfig } from '../../config/pay-pal/pay-pal.config';
@@ -29,6 +27,8 @@ import { GuestUsersRepo } from '../../../../backend/src/features/users/infrastru
 import { GameQuestionsRepo } from '../../../../backend/src/features/pair-game-quiz/infrastructure/game-questions.repo';
 import { PaymentTransactionsRepo } from '../../infrastructure/payment-transactions.repo';
 import { ChallengesQuestionsRepo } from '../../../../backend/src/features/pair-game-quiz/infrastructure/challenges-questions.repo';
+import { KeyResolver } from '../../../../libs/src/common/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../libs/src/common/helpers/uuid-error-resolver';
 
 const payPalUseCases = [
   PayPalCapturePaymentUseCase,
@@ -36,7 +36,7 @@ const payPalUseCases = [
   ProcessPayPalWebhookUseCase,
   FinalizePayPalPaymentUseCase,
 ];
-const helpers = [KeyResolver, UuidErrorResolver];
+const libs = [KeyResolver, UuidErrorResolver];
 
 @Module({
   imports: [
@@ -67,7 +67,7 @@ const helpers = [KeyResolver, UuidErrorResolver];
     GameQuestionsRepo,
     PaymentTransactionsRepo,
     ChallengesQuestionsRepo,
-    ...helpers,
+    ...libs,
     ...payPalUseCases,
   ],
 })

@@ -14,13 +14,13 @@ import { NodeEnvConfig } from '../../backend/src/config/node-env/node-env.config
 import { ProductsDataEntity } from '../../backend/src/features/products/entities/products-data.entity';
 import { ProductsRepo } from '../../backend/src/features/products/infrastructure/products.repo';
 import { PaymentService } from './application/payment.service';
-import { LibsModule } from '../../libs/shared/libs.module';
-import { UuidErrorResolver } from '../../libs/shared/common/helpers/uuid-error-resolver';
 import { PaymentServiceController } from './api/payment-service.controller';
+import { LibsModule } from '../../libs/src/libs.module';
+import { UuidErrorResolver } from '../../libs/src/common/helpers/uuid-error-resolver';
 
 const paymentUseCases = [BuyProductsUseCase];
 const paymentConfigs = [NodeEnvConfig, StripeConfig, PostgresConfig];
-const helpers = [UuidErrorResolver];
+const libs = [UuidErrorResolver];
 
 @Module({
   imports: [
@@ -38,7 +38,7 @@ const helpers = [UuidErrorResolver];
     StripeFactory,
     PaymentManager,
     ProductsRepo,
-    ...helpers,
+    ...libs,
     ...paymentConfigs,
     ...paymentUseCases,
   ],

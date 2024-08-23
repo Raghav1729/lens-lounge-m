@@ -36,6 +36,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/frontend/tsconfig.json"
       }
+    },
+    "libs": {
+      "type": "application",
+      "root": "apps/libs",
+      "entryFile": "main",
+      "sourceRoot": "apps/libs/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/libs/tsconfig.json"
+      }
     }
   }
 }
