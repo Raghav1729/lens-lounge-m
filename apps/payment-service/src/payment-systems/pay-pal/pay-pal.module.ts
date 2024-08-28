@@ -27,8 +27,8 @@ import { GuestUsersRepo } from '../../../../backend/src/features/users/infrastru
 import { GameQuestionsRepo } from '../../../../backend/src/features/pair-game-quiz/infrastructure/game-questions.repo';
 import { PaymentTransactionsRepo } from '../../infrastructure/payment-transactions.repo';
 import { ChallengesQuestionsRepo } from '../../../../backend/src/features/pair-game-quiz/infrastructure/challenges-questions.repo';
-import { KeyResolver } from '../../../../libs/src/common/helpers/key-resolver';
-import { UuidErrorResolver } from '../../../../libs/src/common/helpers/uuid-error-resolver';
+import { KeyResolver } from '../../../../libs/common/src/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../libs/common/src/helpers/uuid-error-resolver';
 
 const payPalUseCases = [
   PayPalCapturePaymentUseCase,
