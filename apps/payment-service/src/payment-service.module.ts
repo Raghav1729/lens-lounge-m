@@ -15,8 +15,8 @@ import { ProductsDataEntity } from '../../backend/src/features/products/entities
 import { ProductsRepo } from '../../backend/src/features/products/infrastructure/products.repo';
 import { PaymentService } from './application/payment.service';
 import { PaymentServiceController } from './api/payment-service.controller';
-import { LibsModule } from '../../libs/src/libs.module';
 import { UuidErrorResolver } from '../../libs/src/common/helpers/uuid-error-resolver';
+import { CustomConfigModule } from '../../backend/src/config/custom.config-module';
 
 const paymentUseCases = [BuyProductsUseCase];
 const paymentConfigs = [NodeEnvConfig, StripeConfig, PostgresConfig];
@@ -24,9 +24,9 @@ const libs = [UuidErrorResolver];
 
 @Module({
   imports: [
+    CustomConfigModule,
     TypeOrmModule.forFeature([ProductsDataEntity]),
     CqrsModule,
-    LibsModule,
   ],
   controllers: [PaymentServiceController],
   providers: [
