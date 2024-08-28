@@ -11,7 +11,7 @@ import { UrlDto } from '../../features/blogger-blogs/dto/url.dto';
 import { ResizedImageDetailsDto } from '../../features/posts/dto/resized-image-details.dto';
 import { KeysPathDto } from '../../features/posts/dto/keys-path.dto';
 import { PathsKeysFileUploadDto } from '../../features/posts/dto/path-key-file-upload.dto';
-import { BlogIdParams } from '../../../../libs/common/query/params/blogId.params';
+import { BlogIdParams } from '../../../../libs/common/src/query/params/blogId.params';
 
 @Injectable()
 export class FilesStorageAdapter {

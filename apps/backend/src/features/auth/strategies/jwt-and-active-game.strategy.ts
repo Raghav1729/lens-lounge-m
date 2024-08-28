@@ -7,7 +7,7 @@ import { PayloadDto } from '../dto/payload.dto';
 import { UsersEntity } from '../../users/entities/users.entity';
 import { GamePairsRepo } from '../../pair-game-quiz/infrastructure/game-pairs.repo';
 import { CurrentUserAndActiveGameDto } from '../../users/dto/current-user-and-active-game.dto';
-import { noOpenGameMessage } from '../../../../../libs/common/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../libs/common/src/filters/custom-errors-messages';
 
 @Injectable()
 export class JwtAndActiveGameStrategy extends PassportStrategy(
@@ -33,7 +33,7 @@ export class JwtAndActiveGameStrategy extends PassportStrategy(
         payload.userId,
       );
       if (!activeGame) {
-        throw new ForbiddenException(noOpenGameMessage); // No active game found, return 403
+        throw new ForbiddenException(ErrorMessages.game.noOpen); // No active game found, return 403
       }
       return {
         userId: user.userId,

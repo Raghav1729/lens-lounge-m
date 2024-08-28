@@ -30,13 +30,13 @@ import { FindUsersCommand } from '../application/use-cases/find-users.use-case';
 import { FindUserByICommand } from '../application/use-cases/find-user-by-id.use-case';
 import { UserViewModel } from '../views/user.view-model';
 import { ApiTags } from '@nestjs/swagger';
-import { PaginatorDto } from '../../../../../libs/common/helpers/paginator.dto';
-import { ParseQueriesDto } from '../../../../../libs/common/query/dto/parse-queries.dto';
-import { ParseQueriesService } from '../../../../../libs/common/query/parse-queries.service';
-import { IdParams } from '../../../../../libs/common/query/params/id.params';
 import { UsersMethods } from '../../../../../libs/api-documentation/enums/users-methods.enum';
 import { EndpointKeys } from '../../../../../libs/api-documentation/enums/endpoint-keys.enum';
 import { ApiDocService } from '../../../../../libs/api-documentation/api-doc-service';
+import { ParseQueriesService } from '../../../../../libs/common/src/query/parse-queries.service';
+import { PaginatorDto } from '../../../../../libs/common/src/helpers/paginator.dto';
+import { ParseQueriesDto } from '../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { IdParams } from '../../../../../libs/common/src/query/params/id.params';
 
 @SkipThrottle()
 @ApiTags('Users')

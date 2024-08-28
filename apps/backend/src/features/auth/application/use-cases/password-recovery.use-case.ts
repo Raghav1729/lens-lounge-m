@@ -4,8 +4,8 @@ import { UsersRepo } from '../../../users/infrastructure/users-repo';
 import { UsersEntity } from '../../../users/entities/users.entity';
 import { NotFoundException } from '@nestjs/common';
 import { UpdatedConfirmationCodeByRecoveryCodeEvent } from '../../events/updated-confirmation-code-by-recovery-code.event';
-import { CalculatorExpirationDate } from '../../../../../../libs/common/helpers/calculator-expiration-date/calculator-expiration-date';
-import { ExpirationDateDto } from '../../../../../../libs/common/helpers/calculator-expiration-date/dto/expiration-date.dto';
+import { CalculatorExpirationDate } from '../../../../../../libs/common/src/helpers/calculator-expiration-date/calculator-expiration-date';
+import { ExpirationDateDto } from '../../../../../../libs/common/src/helpers/calculator-expiration-date/dto/expiration-date.dto';
 
 export class PasswordRecoveryCommand {
   constructor(public email: string) {}

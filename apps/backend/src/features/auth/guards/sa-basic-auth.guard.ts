@@ -12,10 +12,7 @@ import { ConfigType } from '../../../config/configuration';
 import { CommandBus } from '@nestjs/cqrs';
 import { CreateSaUserCommand } from '../../sa/application/use-cases/sa-create-super-admin.use-case';
 import { UsersRepo } from '../../users/infrastructure/users-repo';
-import {
-  loginOrPassInvalid,
-  noAuthHeadersError,
-} from '../../../../../libs/common/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../libs/common/src/filters/custom-errors-messages';
 
 @Injectable()
 export class SaBasicAuthGuard extends SaConfig implements CanActivate {
@@ -39,12 +36,14 @@ export class SaBasicAuthGuard extends SaConfig implements CanActivate {
     const expectedInputAuthorization = `Basic ${expectedBasicAuthInput}`;
 
     if (!request.headers || !request.headers.authorization) {
-      throw new UnauthorizedException([noAuthHeadersError]);
+      throw new UnauthorizedException([
+        ErrorMessages.authentication.noAuthHeadersError,
+      ]);
     } else {
       if (request.headers.authorization !== expectedInputAuthorization) {
         throw new HttpException(
           {
-            message: [loginOrPassInvalid],
+            message: [ErrorMessages.authentication.loginOrPassInvalid],
           },
           HttpStatus.UNAUTHORIZED,
         );

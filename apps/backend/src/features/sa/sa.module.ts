@@ -53,10 +53,10 @@ import { ImagesBlogsMainMetadataRepo } from '../blogger-blogs/infrastructure/ima
 import { SaConfig } from '../../config/sa/sa.config';
 import { CreateSaUserUseCase } from './application/use-cases/sa-create-super-admin.use-case';
 import { FilesMetadataService } from '../../adapters/media-services/files/files-metadata.service';
-import { UuidErrorResolver } from '../../../../libs/common/helpers/uuid-error-resolver';
-import { KeyResolver } from '../../../../libs/common/helpers/key-resolver';
-import { ParseQueriesService } from '../../../../libs/common/query/parse-queries.service';
-import { CalculatorExpirationDate } from '../../../../libs/common/helpers/calculator-expiration-date/calculator-expiration-date';
+import { KeyResolver } from '../../../../libs/common/src/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../libs/common/src/helpers/uuid-error-resolver';
+import { ParseQueriesService } from '../../../../libs/common/src/query/parse-queries.service';
+import { CalculatorExpirationDate } from '../../../../libs/common/src/helpers/calculator-expiration-date/calculator-expiration-date';
 
 const saUseCases = [
   SaFindBlogsUseCase,

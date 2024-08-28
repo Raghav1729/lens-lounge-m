@@ -18,8 +18,8 @@ import { OriginalMiddleSmallEntitiesDto } from '../dto/original-middle-small-ent
 import { ImagesPostsSmallMetadataRepo } from './images-posts-small-metadata.repo';
 import { ImagesPostsMiddleMetadataRepo } from './images-posts-middle-metadata.repo';
 import { PathKeyBufferDto } from '../dto/path-key-buffer.dto';
-import { UuidErrorResolver } from '../../../../../libs/common/helpers/uuid-error-resolver';
-import { KeyResolver } from '../../../../../libs/common/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
+import { KeyResolver } from '../../../../../libs/common/src/helpers/key-resolver';
 
 export class ImagesPostsOriginalMetadataRepo {
   constructor(

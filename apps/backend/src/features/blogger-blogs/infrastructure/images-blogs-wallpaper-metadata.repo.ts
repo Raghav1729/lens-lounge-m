@@ -10,7 +10,7 @@ import { FileUploadDto } from '../dto/file-upload.dto';
 import { UrlPathKeyEtagDto } from '../dto/url-pathKey-etag.dto';
 import { CurrentUserDto } from '../../users/dto/current-user.dto';
 import { BannedFlagsDto } from '../../posts/dto/banned-flags.dto';
-import { UuidErrorResolver } from '../../../../../libs/common/helpers/uuid-error-resolver';
+import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
 
 export class ImagesBlogsWallpaperMetadataRepo {
   constructor(

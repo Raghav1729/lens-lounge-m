@@ -3,7 +3,7 @@ import { JwtService } from '@nestjs/jwt';
 import { JwtConfig } from '../../../../config/jwt/jwt.config';
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { HttpException, HttpStatus } from '@nestjs/common';
-import { jwtCookiesIncorrect } from '../../../../../../libs/common/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class ValidRefreshJwtCommand {
   constructor(public refreshToken: string) {}
@@ -31,7 +31,7 @@ export class ValidRefreshJwtUseCase
     } catch (error) {
       console.log(error.message);
       throw new HttpException(
-        { message: [jwtCookiesIncorrect] },
+        { message: [ErrorMessages.jwt.cookiesIncorrect] },
         HttpStatus.UNAUTHORIZED,
       );
     }

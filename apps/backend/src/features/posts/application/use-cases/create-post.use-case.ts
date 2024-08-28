@@ -19,7 +19,7 @@ import { PostWithLikesInfoViewModel } from '../../views/post-with-likes-info.vie
 import { PostWithLikesImagesInfoViewModel } from '../../views/post-with-likes-images-info.view-model';
 import { SendNewBlogPostNotificationsCommand } from '../../../telegram/application/use-cases/send-new-blog-post-notifications.use-case';
 import { FilesMetadataService } from '../../../../adapters/media-services/files/files-metadata.service';
-import { userNotHavePermissionForPost } from '../../../../../../libs/common/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class CreatePostCommand {
   constructor(
@@ -86,7 +86,9 @@ export class CreatePostUseCase implements ICommandHandler<CreatePostCommand> {
 
     // User is banned from posting in this blog, throw a ForbiddenException with a custom error message
     if (userIsBannedForBlog)
-      throw new ForbiddenException(userNotHavePermissionForPost);
+      throw new ForbiddenException(
+        ErrorMessages.user.notHavePermission.forPost,
+      );
 
     try {
       // Check the user's ability to create a post in this blog

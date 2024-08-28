@@ -8,7 +8,7 @@ import { UsersEntity } from '../../users/entities/users.entity';
 import { CommandBus } from '@nestjs/cqrs';
 import { ValidLoginOrEmailPasswordCommand } from '../application/use-cases/valid-login-or-email-password.use-case';
 import { ValidLoginPasswordSizesCommand } from '../application/use-cases/valid-login-password-sizes.use-case';
-import { noAuthHeadersError } from '../../../../../libs/common/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../libs/common/src/filters/custom-errors-messages';
 
 @Injectable()
 export class BasicAuthGuard implements CanActivate {
@@ -18,7 +18,9 @@ export class BasicAuthGuard implements CanActivate {
     const request = context.switchToHttp().getRequest();
 
     if (!request.headers || !request.headers.authorization) {
-      throw new UnauthorizedException([noAuthHeadersError]);
+      throw new UnauthorizedException([
+        ErrorMessages.authentication.noAuthHeadersError,
+      ]);
     }
 
     const authorizationHeader = request.headers.authorization;
@@ -26,7 +28,9 @@ export class BasicAuthGuard implements CanActivate {
     const [, base64Credentials] = authorizationHeader.split(' ');
 
     if (!base64Credentials) {
-      throw new UnauthorizedException([noAuthHeadersError]);
+      throw new UnauthorizedException([
+        ErrorMessages.authentication.noAuthHeadersError,
+      ]);
     }
 
     const credentials = Buffer.from(base64Credentials, 'base64').toString(

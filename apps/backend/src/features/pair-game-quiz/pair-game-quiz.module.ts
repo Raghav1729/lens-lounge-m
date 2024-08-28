@@ -24,9 +24,9 @@ import { GamesStatisticUseCase } from './application/use-cases/games-statistic.u
 import { PlayerAnswersAllQuestionsUseCase } from './application/use-cases/player-answers-all-questions.use-case';
 import { FinishGameForAnotherUserUseCase } from './application/use-cases/finish-game-for-another-user.use-case';
 import { AddResultToFinishedGameEventHandler } from './events-handlers/add-result-to-finished-game.event.handler';
-import { UuidErrorResolver } from '../../../../libs/common/helpers/uuid-error-resolver';
-import { KeyResolver } from '../../../../libs/common/helpers/key-resolver';
-import { ParseQueriesService } from '../../../../libs/common/query/parse-queries.service';
+import { KeyResolver } from '../../../../libs/common/src/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../libs/common/src/helpers/uuid-error-resolver';
+import { ParseQueriesService } from '../../../../libs/common/src/query/parse-queries.service';
 
 const usersUseCases = [
   MyCurrentGameUseCase,

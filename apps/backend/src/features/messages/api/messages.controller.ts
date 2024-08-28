@@ -16,7 +16,7 @@ import { CurrentUserDto } from '../../users/dto/current-user.dto';
 import { ApiTags } from '@nestjs/swagger';
 import { MessagesEntity } from '../entities/messages.entity';
 import { JwtAuthGuard } from '../../auth/guards/jwt-auth.guard';
-import { ConversationIdParams } from '../../../../../libs/common/query/params/conversation-id.params';
+import { ConversationIdParams } from '../../../../../libs/common/src/query/params/conversation-id.params';
 
 @ApiTags('Messages')
 @Controller('conversation')

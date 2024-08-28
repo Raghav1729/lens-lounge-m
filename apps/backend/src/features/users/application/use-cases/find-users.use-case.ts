@@ -1,8 +1,8 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { UsersRepo } from '../../infrastructure/users-repo';
 import { UsersEntity } from '../../entities/users.entity';
-import { ParseQueriesDto } from '../../../../../../libs/common/query/dto/parse-queries.dto';
-import { PaginatorDto } from '../../../../../../libs/common/helpers/paginator.dto';
+import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { PaginatorDto } from '../../../../../../libs/common/src/helpers/paginator.dto';
 
 export class FindUsersCommand {
   constructor(public queryData: ParseQueriesDto) {}

@@ -13,7 +13,7 @@ import { CurrentUserDto } from '../../../users/dto/current-user.dto';
 import { BanInfoDto } from '../../../users/dto/ban-info.dto';
 import { UsersRepo } from '../../../users/infrastructure/users-repo';
 import { UsersEntity } from '../../../users/entities/users.entity';
-import { cannotBlockYourself } from '../../../../../../libs/common/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class SaBanUnbanUserCommand {
   constructor(
@@ -38,7 +38,7 @@ export class SaBanUnbanUserUseCase
 
     if (userId === currentUserDto.userId) {
       throw new HttpException(
-        { message: cannotBlockYourself },
+        { message: ErrorMessages.user.cannotBlock.yourself.message },
         HttpStatus.BAD_REQUEST,
       );
     }

@@ -51,11 +51,11 @@ import { ImagesBlogsWallpaperMetadataRepo } from '../blogger-blogs/infrastructur
 import { ImagesBlogsMainMetadataRepo } from '../blogger-blogs/infrastructure/images-blogs-main-metadata.repo';
 import { SaConfig } from '../../config/sa/sa.config';
 import { FilesMetadataService } from '../../adapters/media-services/files/files-metadata.service';
-import { ParseQueriesService } from '../../../../libs/common/query/parse-queries.service';
-import { KeyResolver } from '../../../../libs/common/helpers/key-resolver';
-import { UuidErrorResolver } from '../../../../libs/common/helpers/uuid-error-resolver';
-import { CalculatorExpirationDate } from '../../../../libs/common/helpers/calculator-expiration-date/calculator-expiration-date';
 import { BloggerBlogsService } from '../blogger-blogs/application/blogger-blogs.service';
+import { KeyResolver } from '../../../../libs/common/src/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../libs/common/src/helpers/uuid-error-resolver';
+import { CalculatorExpirationDate } from '../../../../libs/common/src/helpers/calculator-expiration-date/calculator-expiration-date';
+import { ParseQueriesService } from '../../../../libs/common/src/query/parse-queries.service';
 
 const postsUseCases = [
   GetPostsUseCase,
@@ -68,7 +68,12 @@ const postsUseCases = [
   DeletePostByIdUseCase,
 ];
 
-const helpers = [KeyResolver, UuidErrorResolver, CalculatorExpirationDate];
+const helpers = [
+  KeyResolver,
+  UuidErrorResolver,
+  CalculatorExpirationDate,
+  ParseQueriesService,
+];
 
 @Module({
   imports: [
@@ -104,7 +109,6 @@ const helpers = [KeyResolver, UuidErrorResolver, CalculatorExpirationDate];
     PostsService,
     UsersService,
     CommentsService,
-    ParseQueriesService,
     BloggerBlogsService,
     FilesMetadataService,
     UsersRepo,

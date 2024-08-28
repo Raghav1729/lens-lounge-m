@@ -20,10 +20,10 @@ import { ChallengesAnswersRepo } from '../pair-game-quiz/infrastructure/challeng
 import { PairsGameEntity } from '../pair-game-quiz/entities/pairs-game.entity';
 import { GamePairsRepo } from '../pair-game-quiz/infrastructure/game-pairs.repo';
 import { SaConfig } from '../../config/sa/sa.config';
-import { KeyResolver } from '../../../../libs/common/helpers/key-resolver';
-import { UuidErrorResolver } from '../../../../libs/common/helpers/uuid-error-resolver';
-import { ParseQueriesService } from '../../../../libs/common/query/parse-queries.service';
-import { CalculatorExpirationDate } from '../../../../libs/common/helpers/calculator-expiration-date/calculator-expiration-date';
+import { KeyResolver } from '../../../../libs/common/src/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../libs/common/src/helpers/uuid-error-resolver';
+import { ParseQueriesService } from '../../../../libs/common/src/query/parse-queries.service';
+import { CalculatorExpirationDate } from '../../../../libs/common/src/helpers/calculator-expiration-date/calculator-expiration-date';
 
 const saQuizUseCases = [
   SaCreateQuestionsAndAnswerUseCase,

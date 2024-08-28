@@ -7,7 +7,7 @@ import { ImagesPostsOriginalMetadataRepo } from '../../infrastructure/images-pos
 import { PostsService } from '../posts.service';
 import { PostWithLikesImagesInfoViewModel } from '../../views/post-with-likes-images-info.view-model';
 import { PathKeyBufferDto } from '../../dto/path-key-buffer.dto';
-import { ParseQueriesDto } from '../../../../../../libs/common/query/dto/parse-queries.dto';
+import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
 
 export class GetPostsInBlogCommand {
   constructor(

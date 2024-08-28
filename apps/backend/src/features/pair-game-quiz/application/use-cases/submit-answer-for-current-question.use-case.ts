@@ -22,10 +22,7 @@ import { GameOverEvent } from '../../events/game-over.event';
 import { StatusGameEnum } from '../../enums/status-game.enum';
 import { GamePairsRepo } from '../../infrastructure/game-pairs.repo';
 import { ChallengeQuestionsEntity } from '../../entities/challenge-questions.entity';
-import {
-  answeredAllQuestionsMessage,
-  notFoundChallengeQuestions,
-} from '../../../../../../libs/common/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class SubmitAnswerCommand {
   constructor(
@@ -97,7 +94,7 @@ export class SubmitAnswerForCurrentQuestionUseCase
   private async validateAnswerCount(countAnswersUser: number): Promise<void> {
     const MAX_ANSWER_COUNT = 5;
     if (countAnswersUser === MAX_ANSWER_COUNT) {
-      throw new ForbiddenException(answeredAllQuestionsMessage);
+      throw new ForbiddenException(ErrorMessages.game.answeredAllQuestions);
     }
   }
 
@@ -111,7 +108,9 @@ export class SubmitAnswerForCurrentQuestionUseCase
         countAnswersUser,
       );
     if (!nextQuestion) {
-      throw new ForbiddenException(notFoundChallengeQuestions);
+      throw new ForbiddenException(
+        ErrorMessages.game.notFoundChallengeQuestions,
+      );
     }
     return nextQuestion;
   }

@@ -1,10 +1,7 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { HttpException, HttpStatus } from '@nestjs/common';
-import { CustomErrorsMessagesType } from '../../../../../../libs/common/filters/types/custom-errors-messages.types';
-import {
-  invalidLoginOrEmailLengthError,
-  passwordInvalid,
-} from '../../../../../../libs/common/filters/custom-errors-messages';
+import { CustomErrorsMessagesType } from '../../../../../../libs/common/src/filters/types/custom-errors-messages.types';
+import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class ValidLoginPasswordSizesCommand {
   constructor(
@@ -26,11 +23,17 @@ export class ValidLoginPasswordSizesUseCase
       loginOrEmail.toString(),
       3,
       50,
-      invalidLoginOrEmailLengthError,
+      ErrorMessages.authentication.invalidLoginOrEmailLength,
       messages,
     );
 
-    this.validateLength(password.toString(), 6, 20, passwordInvalid, messages);
+    this.validateLength(
+      password.toString(),
+      6,
+      20,
+      ErrorMessages.authentication.invalidPasswordLength,
+      messages,
+    );
 
     if (messages.length !== 0) {
       throw new HttpException(

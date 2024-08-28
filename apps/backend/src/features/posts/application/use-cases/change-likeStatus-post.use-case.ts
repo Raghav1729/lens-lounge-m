@@ -8,7 +8,7 @@ import { PostsEntity } from '../../entities/posts.entity';
 import { LikeStatusPostsRepo } from '../../infrastructure/like-status-posts.repo';
 import { LikeStatusPostsEntity } from '../../entities/like-status-posts.entity';
 import { BannedUsersForBlogsRepo } from '../../../users/infrastructure/banned-users-for-blogs.repo';
-import { userNotHavePermissionForBlog } from '../../../../../../libs/common/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class ChangeLikeStatusPostCommand {
   constructor(
@@ -55,6 +55,6 @@ export class ChangeLikeStatusPostUseCase
       post.blog.id,
     );
     if (userIsBannedForBlog)
-      throw new ForbiddenException(userNotHavePermissionForBlog);
+      throw new ForbiddenException(ErrorMessages.user.notHavePermission.blog);
   }
 }

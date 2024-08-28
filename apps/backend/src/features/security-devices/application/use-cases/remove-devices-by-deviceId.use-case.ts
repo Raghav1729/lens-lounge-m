@@ -3,7 +3,7 @@ import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { HttpException, HttpStatus, NotFoundException } from '@nestjs/common';
 import { SecurityDevicesRepo } from '../../infrastructure/security-devices.repo';
 import { SecurityDevicesEntity } from '../../entities/session-devices.entity';
-import { forbiddenDeleteDevice } from '../../../../../../libs/common/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class RemoveDevicesByDeviceIdCommand {
   constructor(
@@ -28,7 +28,10 @@ export class RemoveDevicesByDeviceIdUseCase
     }
 
     if (device[0].user.userId !== currentPayload.userId) {
-      throw new HttpException(forbiddenDeleteDevice, HttpStatus.FORBIDDEN);
+      throw new HttpException(
+        ErrorMessages.device.forbiddenDelete,
+        HttpStatus.FORBIDDEN,
+      );
     }
 
     return await this.securityDevicesRepo.deleteDeviceByDeviceId(deviceId);

@@ -44,18 +44,18 @@ import { BloggerBlogsViewModel } from '../../blogger-blogs/views/blogger-blogs.v
 import { UsersService } from '../../users/application/users.service';
 import { SaUserViewModel } from '../views/sa-user-view-model';
 import { ApiTags } from '@nestjs/swagger';
-import { ParseQueriesService } from '../../../../../libs/common/query/parse-queries.service';
-import { PaginatorDto } from '../../../../../libs/common/helpers/paginator.dto';
-import { BlogExistValidationPipe } from '../../../../../libs/common/pipes/blog-exist-validation.pipe';
-import { ParseQueriesDto } from '../../../../../libs/common/query/dto/parse-queries.dto';
 import { ApiDocService } from '../../../../../libs/api-documentation/api-doc-service';
 import { EndpointKeys } from '../../../../../libs/api-documentation/enums/endpoint-keys.enum';
 import { SaMethods } from '../../../../../libs/api-documentation/enums/sa-methods.enum';
-import { IdParams } from '../../../../../libs/common/query/params/id.params';
-import { BlogIdParams } from '../../../../../libs/common/query/params/blogId.params';
+import { ParseQueriesService } from '../../../../../libs/common/src/query/parse-queries.service';
+import { PaginatorDto } from '../../../../../libs/common/src/helpers/paginator.dto';
+import { BlogExistValidationPipe } from '../../../../../libs/common/src/pipes/blog-exist-validation.pipe';
+import { ParseQueriesDto } from '../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { IdParams } from '../../../../../libs/common/src/query/params/id.params';
+import { BlogIdParams } from '../../../../../libs/common/src/query/params/blogId.params';
+import { BlogIdPostIdParams } from '../../../../../libs/common/src/query/params/blogId-postId.params';
 import { CreatePostCommand } from '../../posts/application/use-cases/create-post.use-case';
-import { BlogIdPostIdParams } from '../../../../../libs/common/query/params/blogId-postId.params';
-import { IdUserIdParams } from '../../../../../libs/common/query/params/id-userId.params';
+import { IdUserIdParams } from '../../../../../libs/common/src/query/params/id-userId.params';
 
 @SkipThrottle()
 @ApiTags('Super Admin')

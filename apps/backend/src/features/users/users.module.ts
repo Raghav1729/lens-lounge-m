@@ -22,13 +22,13 @@ import { ChallengeQuestionsEntity } from '../pair-game-quiz/entities/challenge-q
 import { GameQuestionsRepo } from '../pair-game-quiz/infrastructure/game-questions.repo';
 import { QuestionsQuizEntity } from '../sa-quiz-questions/entities/questions-quiz.entity';
 import { SaConfig } from '../../config/sa/sa.config';
-import { LoginEmailExistsValidator } from '../../../../libs/common/validators/login-email-exists.validator';
-import { EmailAndLoginNotExistValidator } from '../../../../libs/common/validators/email-and-login-not-exist.validator';
-import { CodeExistsValidator } from '../../../../libs/common/validators/code-exists.validator';
-import { KeyResolver } from '../../../../libs/common/helpers/key-resolver';
-import { UuidErrorResolver } from '../../../../libs/common/helpers/uuid-error-resolver';
-import { ParseQueriesService } from '../../../../libs/common/query/parse-queries.service';
-import { CalculatorExpirationDate } from '../../../../libs/common/helpers/calculator-expiration-date/calculator-expiration-date';
+import { LoginEmailExistsValidator } from '../../../../libs/common/src/validators/login-email-exists.validator';
+import { EmailAndLoginNotExistValidator } from '../../../../libs/common/src/validators/email-and-login-not-exist.validator';
+import { CodeExistsValidator } from '../../../../libs/common/src/validators/code-exists.validator';
+import { UuidErrorResolver } from '../../../../libs/common/src/helpers/uuid-error-resolver';
+import { KeyResolver } from '../../../../libs/common/src/helpers/key-resolver';
+import { ParseQueriesService } from '../../../../libs/common/src/query/parse-queries.service';
+import { CalculatorExpirationDate } from '../../../../libs/common/src/helpers/calculator-expiration-date/calculator-expiration-date';
 
 const usersUseCases = [
   CreateUserUseCase,

@@ -1,5 +1,5 @@
 import { IsString, Length, Validate } from 'class-validator';
-import { IsArrayValidator } from '../../../../../libs/common/validators/is-array.validator';
+import { IsArrayValidator } from '../../../../../libs/common/src/validators/is-array.validator';
 
 export class UpdateQuizQuestionDto {
   @IsString()

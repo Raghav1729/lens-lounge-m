@@ -2,10 +2,9 @@ import { SkipThrottle } from '@nestjs/throttler';
 import { Controller, Get, Query } from '@nestjs/common';
 import { CommandBus } from '@nestjs/cqrs';
 import { CreateAndSaveCreateRandomProductsCommand } from '../application/create-and-save-create-random-products.use-case';
-
 import { ApiTags } from '@nestjs/swagger';
-import { ParseQueriesService } from '../../../../../libs/common/query/parse-queries.service';
-import { ParseQueriesDto } from '../../../../../libs/common/query/dto/parse-queries.dto';
+import { ParseQueriesService } from '../../../../../libs/common/src/query/parse-queries.service';
+import { ParseQueriesDto } from '../../../../../libs/common/src/query/dto/parse-queries.dto';
 
 @SkipThrottle()
 @ApiTags('Products')

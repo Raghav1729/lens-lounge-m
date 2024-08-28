@@ -1,5 +1,5 @@
 import { IsNotEmpty, Length, Validate } from 'class-validator';
-import { CodeExistsValidator } from '../../../../../libs/common/validators/code-exists.validator';
+import { CodeExistsValidator } from '../../../../../libs/common/src/validators/code-exists.validator';
 
 export class CodeDto {
   @IsNotEmpty()

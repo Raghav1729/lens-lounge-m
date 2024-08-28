@@ -3,7 +3,7 @@ import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { UsersRepo } from '../../../users/infrastructure/users-repo';
 import { UsersEntity } from '../../../users/entities/users.entity';
 import { HttpException, HttpStatus } from '@nestjs/common';
-import { validatePasswordFailed } from '../../../../../../libs/common/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class ValidLoginOrEmailPasswordCommand {
   constructor(
@@ -32,7 +32,7 @@ export class ValidLoginOrEmailPasswordUseCase
       !(await bcrypt.compare(password, user.passwordHash))
     ) {
       throw new HttpException(
-        { message: [validatePasswordFailed] },
+        { message: [ErrorMessages.authentication.loginOrPassInvalid] },
         HttpStatus.UNAUTHORIZED,
       );
     }

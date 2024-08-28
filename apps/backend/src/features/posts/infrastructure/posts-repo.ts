@@ -17,10 +17,10 @@ import { LikeStatusCommentsEntity } from '../../comments/entities/like-status-co
 import { PostViewModel } from '../views/post.view-model';
 import { LikeStatusPostsRepo } from './like-status-posts.repo';
 import { ImagesPostsOriginalMetadataEntity } from '../entities/images-post-original-metadata.entity';
-import { UuidErrorResolver } from '../../../../../libs/common/helpers/uuid-error-resolver';
-import { KeyResolver } from '../../../../../libs/common/helpers/key-resolver';
-import { ParseQueriesDto } from '../../../../../libs/common/query/dto/parse-queries.dto';
-import { SortDirectionEnum } from '../../../../../libs/common/query/enums/sort-direction.enum';
+import { KeyResolver } from '../../../../../libs/common/src/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
+import { ParseQueriesDto } from '../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { SortDirectionEnum } from '../../../../../libs/common/src/query/enums/sort-direction.enum';
 
 export class PostsRepo {
   constructor(

@@ -9,7 +9,7 @@ import { PostsRepo } from '../../../posts/infrastructure/posts-repo';
 import { BloggerBlogsEntity } from '../../../blogger-blogs/entities/blogger-blogs.entity';
 import { PostsEntity } from '../../../posts/entities/posts.entity';
 import { BloggerBlogsRepo } from '../../../blogger-blogs/infrastructure/blogger-blogs.repo';
-import { BlogIdPostIdParams } from '../../../../../../libs/common/query/params/blogId-postId.params';
+import { BlogIdPostIdParams } from '../../../../../../libs/common/src/query/params/blogId-postId.params';
 
 export class SaUpdatePostsByPostIdCommand {
   constructor(

@@ -5,7 +5,7 @@ import {
   Injectable,
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { jwtIncorrect } from '../../../../../libs/common/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../libs/common/src/filters/custom-errors-messages';
 
 @Injectable()
 export class JwtAuthAndActiveGameGuard extends AuthGuard('jwt-active-game') {
@@ -17,7 +17,10 @@ export class JwtAuthAndActiveGameGuard extends AuthGuard('jwt-active-game') {
     if (err || !user) {
       throw (
         err ||
-        new HttpException({ message: [jwtIncorrect] }, HttpStatus.UNAUTHORIZED)
+        new HttpException(
+          { message: [ErrorMessages.jwt.incorrect] },
+          HttpStatus.UNAUTHORIZED,
+        )
       );
     }
     return user;

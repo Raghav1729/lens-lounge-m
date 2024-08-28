@@ -11,8 +11,8 @@ import { ChallengesQuestionsRepo } from '../../infrastructure/challenges-questio
 import { ChallengesAnswersRepo } from '../../infrastructure/challenges-answers.repo';
 import { PairsGameEntity } from '../../entities/pairs-game.entity';
 import { GamePairsRepo } from '../../infrastructure/game-pairs.repo';
-import { ParseQueriesDto } from '../../../../../../libs/common/query/dto/parse-queries.dto';
-import { PaginatorDto } from '../../../../../../libs/common/helpers/paginator.dto';
+import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { PaginatorDto } from '../../../../../../libs/common/src/helpers/paginator.dto';
 
 export class GetMyGamesCommand {
   constructor(

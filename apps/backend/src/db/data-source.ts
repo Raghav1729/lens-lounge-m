@@ -27,7 +27,7 @@ import { PaymentTransactionsEntity } from '../features/products/entities/payment
 import { ProductsDataEntity } from '../features/products/entities/products-data.entity';
 import { ConversationsEntity } from '../features/messages/entities/conversations.entity';
 import { MessagesEntity } from '../features/messages/entities/messages.entity';
-import { SentCodesLogEntity } from '../../../libs/common/mails/entities/sent-codes-log.entity';
+import { SentCodesLogEntity } from '../../../libs/mails/entities/sent-codes-log.entity';
 
 export default new DataSource({
   type: 'postgres',

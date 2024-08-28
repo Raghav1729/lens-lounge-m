@@ -15,7 +15,7 @@ import { BloggerBlogsEntity } from '../../entities/blogger-blogs.entity';
 import { BannedUsersForBlogsRepo } from '../../../users/infrastructure/banned-users-for-blogs.repo';
 import { UsersRepo } from '../../../users/infrastructure/users-repo';
 import { UsersEntity } from '../../../users/entities/users.entity';
-import { cannotBlockYourself } from '../../../../../../libs/common/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class ManageBlogAccessCommand {
   constructor(
@@ -42,7 +42,7 @@ export class ManageBlogAccessUseCase
 
     if (userId === currentUserDto.userId) {
       throw new HttpException(
-        { message: cannotBlockYourself },
+        { message: ErrorMessages.user.cannotBlock.yourself },
         HttpStatus.BAD_REQUEST,
       );
     }

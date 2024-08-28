@@ -2,8 +2,8 @@ import { CurrentUserDto } from '../../../users/dto/current-user.dto';
 import { CommandBus, CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { PostsAndCountDto } from '../../dto/posts-and-count.dto';
 import { PostsRepo } from '../../infrastructure/posts-repo';
-import { ParseQueriesDto } from '../../../../../../libs/common/query/dto/parse-queries.dto';
-import { PaginatorDto } from '../../../../../../libs/common/helpers/paginator.dto';
+import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { PaginatorDto } from '../../../../../../libs/common/src/helpers/paginator.dto';
 
 export class GetPostsCommand {
   constructor(

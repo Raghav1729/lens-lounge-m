@@ -2,9 +2,9 @@ import * as uuid4 from 'uuid4';
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { UsersRepo } from '../../infrastructure/users-repo';
 import { UsersEntity } from '../../entities/users.entity';
-import { CalculatorExpirationDate } from '../../../../../../libs/common/helpers/calculator-expiration-date/calculator-expiration-date';
-import { ExpirationDateDto } from '../../../../../../libs/common/helpers/calculator-expiration-date/dto/expiration-date.dto';
 import { UpdatedConfirmationCodeEvent } from '../../../auth/events/updated-confirmation-code.event';
+import { CalculatorExpirationDate } from '../../../../../../libs/common/src/helpers/calculator-expiration-date/calculator-expiration-date';
+import { ExpirationDateDto } from '../../../../../../libs/common/src/helpers/calculator-expiration-date/dto/expiration-date.dto';
 
 export class UpdateSentConfirmationCodeCommand {
   constructor(public email: string) {}

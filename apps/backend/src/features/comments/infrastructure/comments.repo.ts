@@ -20,10 +20,10 @@ import { PartialCommentsDto } from '../dto/partial-comments.dto';
 import { CommentsAndCountDto } from '../dto/comments-and-count.dto';
 import { LikeStatusCommentsRepo } from './like-status-comments.repo';
 import { BloggerCommentViewModel } from '../../blogger-blogs/views/blogger-comment.view-model';
-import { KeyResolver } from '../../../../../libs/common/helpers/key-resolver';
-import { UuidErrorResolver } from '../../../../../libs/common/helpers/uuid-error-resolver';
-import { ParseQueriesDto } from '../../../../../libs/common/query/dto/parse-queries.dto';
-import { SortDirectionEnum } from '../../../../../libs/common/query/enums/sort-direction.enum';
+import { KeyResolver } from '../../../../../libs/common/src/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
+import { ParseQueriesDto } from '../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { SortDirectionEnum } from '../../../../../libs/common/src/query/enums/sort-direction.enum';
 
 export class CommentsRepo {
   constructor(

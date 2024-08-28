@@ -3,8 +3,8 @@ import { QuestionsAndCountDto } from '../../dto/questions-and-count.dto';
 import { GameQuestionsRepo } from '../../../pair-game-quiz/infrastructure/game-questions.repo';
 import { SaQuizQuestionsService } from '../sa-quiz-questions.service';
 import { QuestionsViewModel } from '../../views/questions.view-model';
-import { ParseQueriesDto } from '../../../../../../libs/common/query/dto/parse-queries.dto';
-import { PaginatorDto } from '../../../../../../libs/common/helpers/paginator.dto';
+import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { PaginatorDto } from '../../../../../../libs/common/src/helpers/paginator.dto';
 
 export class SaGetQuestionsCommand {
   constructor(public queryData: ParseQueriesDto) {}
