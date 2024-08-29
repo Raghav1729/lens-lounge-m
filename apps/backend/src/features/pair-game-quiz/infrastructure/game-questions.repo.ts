@@ -40,7 +40,7 @@ export class GameQuestionsRepo {
         await queryBuilder.getOne();
 
       return questionsQuizEntity ? questionsQuizEntity : null;
-    } catch (error) {
+    } catch (error: any) {
       if (await this.uuidErrorResolver.isInvalidUUIDError(error)) {
         const userId =
           await this.uuidErrorResolver.extractUserIdFromError(error);
@@ -68,7 +68,7 @@ export class GameQuestionsRepo {
         questionsQuizEntity &&
         questionsQuizEntity.hashedAnswers.includes(answer)
       );
-    } catch (error) {
+    } catch (error: any) {
       if (await this.uuidErrorResolver.isInvalidUUIDError(error)) {
         const userId =
           await this.uuidErrorResolver.extractUserIdFromError(error);
@@ -90,7 +90,7 @@ export class GameQuestionsRepo {
       await this.questionsRepository.save(question);
 
       return true;
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error inserting questions into the database:', error);
       throw new InternalServerErrorException(error.message);
     }
@@ -115,7 +115,7 @@ export class GameQuestionsRepo {
       await this.questionsRepository.save(question);
 
       return true;
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error inserting questions into the database:', error);
       throw new InternalServerErrorException(error.message);
     }
@@ -140,7 +140,7 @@ export class GameQuestionsRepo {
       await this.questionsRepository.save(newQuestion);
 
       return newQuestion;
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error inserting questions into the database:', error);
       throw new InternalServerErrorException(error.message);
     }
@@ -156,7 +156,7 @@ export class GameQuestionsRepo {
       .limit(numberQuestions);
     try {
       return await queryBuilderQuestions.getMany();
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error inserting questions into the database:', error);
       throw new InternalServerErrorException(error.message);
     }
@@ -201,7 +201,7 @@ export class GameQuestionsRepo {
       }
 
       return { questions, countQuestions };
-    } catch (error) {
+    } catch (error: any) {
       console.log(error.message);
       throw new InternalServerErrorException(error.message);
     }
@@ -236,7 +236,7 @@ export class GameQuestionsRepo {
         }
       }
       return true;
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error inserting questions into the database:', error);
       throw new InternalServerErrorException(error.message);
     }
@@ -250,7 +250,7 @@ export class GameQuestionsRepo {
         },
       );
       return true;
-    } catch (error) {
+    } catch (error: any) {
       console.error(
         `Error while removing data for question id: ${error.message}`,
       );
@@ -283,7 +283,7 @@ export class GameQuestionsRepo {
         .from('QuestionsQuiz', 'challengeAnswers')
         .where('id = :questionId', { questionId })
         .execute();
-    } catch (error) {
+    } catch (error: any) {
       console.error(
         `Error while removing data for question id ${questionId}: ${error.message}`,
       );
