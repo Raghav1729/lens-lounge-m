@@ -5,7 +5,7 @@ import { ConfigService } from '@nestjs/config';
 import { ConfigType } from './config/configuration';
 import { createApp } from '../create-app';
 import { TelegramAdapter } from './adapters/telegram/telegram.adapter';
-import { connectMicroservice } from '../microservice-setup';
+import { connectMicroservice } from './app.microservice-setup';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {

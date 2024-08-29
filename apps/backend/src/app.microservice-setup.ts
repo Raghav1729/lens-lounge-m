@@ -1,4 +1,4 @@
-// microservice-setup.ts
+// app.microservice-setup.ts
 import { INestApplication } from '@nestjs/common';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 
