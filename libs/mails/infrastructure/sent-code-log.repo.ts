@@ -15,9 +15,14 @@ export class SentCodeLogRepo {
 
     try {
       return await this.sentCodesLogRepository.save(newLogEntry);
-    } catch (error) {
-      console.log(error.message);
-      throw new InternalServerErrorException(error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.log(error.message);
+        throw new InternalServerErrorException(error.message);
+      } else {
+        console.log('An unknown error occurred');
+        throw new InternalServerErrorException('An unknown error occurred');
+      }
     }
   }
 

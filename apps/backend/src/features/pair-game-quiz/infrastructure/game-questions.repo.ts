@@ -20,7 +20,7 @@ import { SortDirectionEnum } from '../../../../../../libs/common/src/query/enums
 export class GameQuestionsRepo {
   constructor(
     @InjectRepository(QuestionsQuizEntity)
-    private readonly questionsRepository: Repository<QuestionsQuizEntity>,
+    protected questionsRepository: Repository<QuestionsQuizEntity>,
     protected keyResolver: KeyResolver,
     protected uuidErrorResolver: UuidErrorResolver,
   ) {}
@@ -40,13 +40,9 @@ export class GameQuestionsRepo {
         await queryBuilder.getOne();
 
       return questionsQuizEntity ? questionsQuizEntity : null;
-    } catch (error: any) {
-      if (await this.uuidErrorResolver.isInvalidUUIDError(error)) {
-        const userId =
-          await this.uuidErrorResolver.extractUserIdFromError(error);
-        throw new NotFoundException(`Questions with ID ${userId} not found`);
-      }
-      throw new InternalServerErrorException(error.message);
+    } catch (error: unknown) {
+      await this.handleError(error, 'Error while retrieving question');
+      return null; // Return null to satisfy the return type
     }
   }
 
@@ -68,13 +64,18 @@ export class GameQuestionsRepo {
         questionsQuizEntity &&
         questionsQuizEntity.hashedAnswers.includes(answer)
       );
-    } catch (error: any) {
-      if (await this.uuidErrorResolver.isInvalidUUIDError(error)) {
-        const userId =
-          await this.uuidErrorResolver.extractUserIdFromError(error);
-        throw new NotFoundException(`Questions with ID ${userId} not found`);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        if (await this.uuidErrorResolver.isInvalidUUIDError(error)) {
+          const userId =
+            await this.uuidErrorResolver.extractUserIdFromError(error);
+          throw new NotFoundException(`Questions with ID ${userId} not found`);
+        }
+        throw new InternalServerErrorException(error.message);
+      } else {
+        // Handle the case where error is not an instance of Error
+        throw new InternalServerErrorException('An unknown error occurred');
       }
-      throw new InternalServerErrorException(error.message);
     }
   }
 
@@ -90,9 +91,21 @@ export class GameQuestionsRepo {
       await this.questionsRepository.save(question);
 
       return true;
-    } catch (error: any) {
-      console.error('Error inserting questions into the database:', error);
-      throw new InternalServerErrorException(error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        // Log the error details
+        console.error('Error inserting questions into the database:', error);
+
+        // Throw a more specific exception with the error message
+        throw new InternalServerErrorException(error.message);
+      } else {
+        // Handle cases where the error is not an instance of Error
+        console.error(
+          'Unknown error inserting questions into the database:',
+          error,
+        );
+        throw new InternalServerErrorException('An unknown error occurred');
+      }
     }
   }
 
@@ -115,9 +128,21 @@ export class GameQuestionsRepo {
       await this.questionsRepository.save(question);
 
       return true;
-    } catch (error: any) {
-      console.error('Error inserting questions into the database:', error);
-      throw new InternalServerErrorException(error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        // Log the error details
+        console.error('Error inserting questions into the database:', error);
+
+        // Throw a more specific exception with the error message
+        throw new InternalServerErrorException(error.message);
+      } else {
+        // Handle cases where the error is not an instance of Error
+        console.error(
+          'Unknown error inserting questions into the database:',
+          error,
+        );
+        throw new InternalServerErrorException('An unknown error occurred');
+      }
     }
   }
 
@@ -140,9 +165,21 @@ export class GameQuestionsRepo {
       await this.questionsRepository.save(newQuestion);
 
       return newQuestion;
-    } catch (error: any) {
-      console.error('Error inserting questions into the database:', error);
-      throw new InternalServerErrorException(error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        // Log the error details
+        console.error('Error inserting questions into the database:', error);
+
+        // Throw a more specific exception with the error message
+        throw new InternalServerErrorException(error.message);
+      } else {
+        // Handle cases where the error is not an instance of Error
+        console.error(
+          'Unknown error inserting questions into the database:',
+          error,
+        );
+        throw new InternalServerErrorException('An unknown error occurred');
+      }
     }
   }
 
@@ -156,9 +193,21 @@ export class GameQuestionsRepo {
       .limit(numberQuestions);
     try {
       return await queryBuilderQuestions.getMany();
-    } catch (error: any) {
-      console.error('Error inserting questions into the database:', error);
-      throw new InternalServerErrorException(error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        // Log the error details
+        console.error('Error inserting questions into the database:', error);
+
+        // Throw a more specific exception with the error message
+        throw new InternalServerErrorException(error.message);
+      } else {
+        // Handle cases where the error is not an instance of Error
+        console.error(
+          'Unknown error inserting questions into the database:',
+          error,
+        );
+        throw new InternalServerErrorException('An unknown error occurred');
+      }
     }
   }
 
@@ -201,9 +250,18 @@ export class GameQuestionsRepo {
       }
 
       return { questions, countQuestions };
-    } catch (error: any) {
-      console.log(error.message);
-      throw new InternalServerErrorException(error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        // Log the error message
+        console.log(error.message);
+
+        // Throw a specific exception with the error message
+        throw new InternalServerErrorException(error.message);
+      } else {
+        // Handle cases where the error is not an instance of Error
+        console.log('An unknown error occurred:', error);
+        throw new InternalServerErrorException('An unknown error occurred');
+      }
     }
   }
 
@@ -236,9 +294,21 @@ export class GameQuestionsRepo {
         }
       }
       return true;
-    } catch (error: any) {
-      console.error('Error inserting questions into the database:', error);
-      throw new InternalServerErrorException(error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        // Log the error details
+        console.error('Error inserting questions into the database:', error);
+
+        // Throw a more specific exception with the error message
+        throw new InternalServerErrorException(error.message);
+      } else {
+        // Handle cases where the error is not an instance of Error
+        console.error(
+          'An unknown error occurred inserting questions into the database:',
+          error,
+        );
+        throw new InternalServerErrorException('An unknown error occurred');
+      }
     }
   }
 
@@ -250,11 +320,27 @@ export class GameQuestionsRepo {
         },
       );
       return true;
-    } catch (error: any) {
-      console.error(
-        `Error while removing data for question id: ${error.message}`,
-      );
-      throw new Error(`Error while removing data for question id`);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        // Log the error message
+        console.error(
+          `Error while removing data for question id: ${error.message}`,
+        );
+
+        // Throw a new Error with a more specific message
+        throw new Error(
+          `Error while removing data for question id: ${error.message}`,
+        );
+      } else {
+        // Handle cases where the error is not an instance of Error
+        console.error(
+          'An unknown error occurred while removing data for question id:',
+          error,
+        );
+        throw new Error(
+          'An unknown error occurred while removing data for question id',
+        );
+      }
     }
   }
 
@@ -283,13 +369,27 @@ export class GameQuestionsRepo {
         .from('QuestionsQuiz', 'challengeAnswers')
         .where('id = :questionId', { questionId })
         .execute();
-    } catch (error: any) {
-      console.error(
-        `Error while removing data for question id ${questionId}: ${error.message}`,
-      );
-      throw new Error(
-        `Error while removing data for question id ${questionId}`,
-      );
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        // Log the error message with additional context
+        console.error(
+          `Error while removing data for question id ${questionId}: ${error.message}`,
+        );
+
+        // Throw a new Error with a specific message
+        throw new Error(
+          `Error while removing data for question id ${questionId}: ${error.message}`,
+        );
+      } else {
+        // Handle cases where the error is not an instance of Error
+        console.error(
+          `An unknown error occurred while removing data for question id ${questionId}:`,
+          error,
+        );
+        throw new Error(
+          `An unknown error occurred while removing data for question id ${questionId}`,
+        );
+      }
     }
   }
 
@@ -383,5 +483,22 @@ export class GameQuestionsRepo {
     }
 
     return matchedStrings;
+  }
+
+  private async handleError(error: unknown, context: string): Promise<void> {
+    if (error instanceof Error) {
+      if (await this.uuidErrorResolver.isInvalidUUIDError(error)) {
+        const userId =
+          await this.uuidErrorResolver.extractUserIdFromError(error);
+        throw new NotFoundException(`${context} with ID ${userId} not found`);
+      }
+      console.error(`${context}: ${error.message}`);
+      throw new InternalServerErrorException(`${context}: ${error.message}`);
+    } else {
+      console.error(`${context}: An unknown error occurred`, error);
+      throw new InternalServerErrorException(
+        `${context}: An unknown error occurred`,
+      );
+    }
   }
 }

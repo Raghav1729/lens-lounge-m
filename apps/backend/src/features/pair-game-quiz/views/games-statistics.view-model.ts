@@ -7,6 +7,11 @@ class Player {
 
   @IsString()
   login: string;
+
+  constructor(id: string, login: string) {
+    this.id = id;
+    this.login = login;
+  }
 }
 
 export class GamesStatisticsViewModel {
@@ -32,4 +37,22 @@ export class GamesStatisticsViewModel {
   @ValidateNested()
   @Type(() => Player)
   player: Player;
+
+  constructor(
+    sumScore: number,
+    avgScores: number,
+    gamesCount: number,
+    winsCount: number,
+    lossesCount: number,
+    drawsCount: number,
+    player: Player,
+  ) {
+    this.sumScore = sumScore;
+    this.avgScores = avgScores;
+    this.gamesCount = gamesCount;
+    this.winsCount = winsCount;
+    this.lossesCount = lossesCount;
+    this.drawsCount = drawsCount;
+    this.player = player;
+  }
 }

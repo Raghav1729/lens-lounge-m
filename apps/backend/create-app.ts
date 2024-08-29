@@ -11,6 +11,21 @@ import { HttpExceptionResponseFilter } from '../../libs/common/src/filters/http-
 import { TrimPipe } from '../../libs/common/src/pipes/trim.pipe';
 
 /**
+ * Function to configure and set up a NestJS application.
+ *
+ * @param app The INestApplication instance of the NestJS application.
+ * @returns The same INestApplication instance after applying configurations.
+ */
+export const createApp = (app: INestApplication): INestApplication => {
+  setupContainer(app);
+  setupExceptionFilter(app);
+  setupCookieParser(app);
+  setupGlobalPipes(app);
+  setupSwagger(app);
+  return app;
+};
+
+/**
  * Configure the IoC container for the NestJS application.
  *
  * @param app The INestApplication instance of the NestJS application.
@@ -96,18 +111,3 @@ function setupSwagger(app: INestApplication): void {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('/api/docs', app, document);
 }
-
-/**
- * Function to configure and set up a NestJS application.
- *
- * @param app The INestApplication instance of the NestJS application.
- * @returns The same INestApplication instance after applying configurations.
- */
-export const createApp = (app: INestApplication): INestApplication => {
-  setupContainer(app);
-  setupExceptionFilter(app);
-  setupCookieParser(app);
-  setupGlobalPipes(app);
-  setupSwagger(app);
-  return app;
-};

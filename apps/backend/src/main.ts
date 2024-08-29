@@ -5,6 +5,7 @@ import { ConfigService } from '@nestjs/config';
 import { ConfigType } from './config/configuration';
 import { createApp } from '../create-app';
 import { TelegramAdapter } from './adapters/telegram/telegram.adapter';
+import { connectMicroservice } from '../microservice-setup';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, {
@@ -15,6 +16,9 @@ async function bootstrap() {
 
   // Apply configurations using the createApp function (assuming it configures the app)
   createApp(app);
+
+  // Connect and start the microservice
+  await connectMicroservice(app);
 
   // Retrieve the configuration service to access environment variables
   // const configService = app.get(ConfigService<ConfigType, true>);

@@ -3,24 +3,39 @@ import { BlogExistsValidator } from '../../../../../../libs/common/src/validator
 
 export class CreatePostWithBlogIdDto {
   @IsNotEmpty()
-  @Length(0, 30, {
-    message: 'Incorrect title length! Must be max 100 ch.',
+  @Length(1, 30, {
+    message: 'Title must be between 1 and 30 characters.',
   })
   title: string;
+
   @IsNotEmpty()
-  @Length(0, 100, {
-    message: 'Incorrect shortDescription length! Must be max 100 ch.',
+  @Length(1, 100, {
+    message: 'Short description must be between 1 and 100 characters.',
   })
   shortDescription: string;
+
   @IsNotEmpty()
-  @Length(0, 1000, {
-    message: 'Incorrect content length! Must be max 100 ch.',
+  @Length(1, 1000, {
+    message: 'Content must be between 1 and 1000 characters.',
   })
   content: string;
+
   @IsNotEmpty()
-  @Length(0, 100, {
-    message: 'Incorrect blogId length! Must be max 100 ch.',
+  @Length(1, 100, {
+    message: 'Blog ID must be between 1 and 100 characters.',
   })
   @Validate(BlogExistsValidator)
   blogId: string;
+
+  constructor(
+    title: string,
+    shortDescription: string,
+    content: string,
+    blogId: string,
+  ) {
+    this.title = title;
+    this.shortDescription = shortDescription;
+    this.content = content;
+    this.blogId = blogId;
+  }
 }

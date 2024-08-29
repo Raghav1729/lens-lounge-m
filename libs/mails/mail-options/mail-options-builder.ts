@@ -6,8 +6,8 @@ import { ConfirmationCodeEmailOptions } from '../application/dto/confirmation-co
 
 @Injectable()
 export class MailOptionsBuilder {
-  private domainName: string;
-  private fromEmail: string;
+  private domainName!: string; // Using non-null assertion operator
+  private fromEmail!: string; // Using non-null assertion operator
   constructor(
     protected mailsConfig: MailsConfig,
     protected postgresConfig: PostgresConfig,
