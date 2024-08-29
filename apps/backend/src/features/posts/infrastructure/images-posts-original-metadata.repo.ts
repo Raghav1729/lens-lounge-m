@@ -69,7 +69,7 @@ export class ImagesPostsOriginalMetadataRepo {
         middle: middleMetadata,
         small: smallMetadata,
       };
-    } catch (error) {
+    } catch (error: any) {
       console.log(error.message);
       throw new InternalServerErrorException(
         'An error occurred while creating or updating the post image file metadata.',
@@ -126,7 +126,7 @@ export class ImagesPostsOriginalMetadataRepo {
       return await this.imagesPostsOriginalMetadataRepository.save(
         postsImagesFileMetadataEntity,
       );
-    } catch (error) {
+    } catch (error: any) {
       console.log(error.message);
       throw new InternalServerErrorException(
         'An error occurred while creating or updating the post image file metadata.',
