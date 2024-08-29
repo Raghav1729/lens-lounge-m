@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { sendMessage } from '../services/apiService';
+import { sendMessage } from '../services/api-service';
 
 const MessageSender = () => {
   const [queue, setQueue] = useState('');
