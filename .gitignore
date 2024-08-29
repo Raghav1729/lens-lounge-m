@@ -8,9 +8,6 @@
 /apps/frontend/dist
 /apps/frontend/node_modules
 
-/apps/frontend-1/dist
-/apps/frontend-1/node_modules
-
 /apps/payment-service/dist
 /apps/payment-service/node_modules
 

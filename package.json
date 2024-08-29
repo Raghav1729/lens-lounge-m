@@ -143,7 +143,6 @@
   "workspaces": [
     "apps/backend",
     "apps/frontend",
-    "apps/frontend-1",
     "apps/payment-service",
     "libs/rabbitmq",
     "libs/common",
