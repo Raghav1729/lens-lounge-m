@@ -12,7 +12,7 @@ import { ConfigType } from '../../../config/configuration';
 import { CommandBus } from '@nestjs/cqrs';
 import { CreateSaUserCommand } from '../../sa/application/use-cases/sa-create-super-admin.use-case';
 import { UsersRepo } from '../../users/infrastructure/users-repo';
-import { ErrorMessages } from '../../../../../libs/common/src/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
 
 @Injectable()
 export class SaBasicAuthGuard extends SaConfig implements CanActivate {

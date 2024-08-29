@@ -13,7 +13,7 @@ import { CurrentUserDto } from '../../../users/dto/current-user.dto';
 import { BanInfoDto } from '../../../users/dto/ban-info.dto';
 import { UsersRepo } from '../../../users/infrastructure/users-repo';
 import { UsersEntity } from '../../../users/entities/users.entity';
-import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class SaBanUnbanUserCommand {
   constructor(

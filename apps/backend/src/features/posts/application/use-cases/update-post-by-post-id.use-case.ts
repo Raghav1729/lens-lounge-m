@@ -13,7 +13,7 @@ import { BloggerBlogsRepo } from '../../../blogger-blogs/infrastructure/blogger-
 import { BloggerBlogsEntity } from '../../../blogger-blogs/entities/blogger-blogs.entity';
 import { PostsRepo } from '../../infrastructure/posts-repo';
 import { PostsEntity } from '../../entities/posts.entity';
-import { BlogIdPostIdParams } from '../../../../../../libs/common/src/query/params/blogId-postId.params';
+import { BlogIdPostIdParams } from '../../../../../../../libs/common/src/query/params/blogId-postId.params';
 
 export class UpdatePostByPostIdCommand {
   constructor(

@@ -18,7 +18,7 @@ import { SkipThrottle } from '@nestjs/throttler';
 import { SearchDevicesCommand } from '../application/use-cases/search-devices.use-case';
 import { AuthService } from '../../auth/application/auth.service';
 import { ApiTags } from '@nestjs/swagger';
-import { DeviceIdParams } from '../../../../../libs/common/src/query/params/deviceId.params';
+import { DeviceIdParams } from '../../../../../../libs/common/src/query/params/deviceId.params';
 
 @SkipThrottle()
 @ApiTags('Security')

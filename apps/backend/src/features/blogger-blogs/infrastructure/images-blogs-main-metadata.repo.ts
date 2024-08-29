@@ -11,7 +11,7 @@ import { FileUploadDto } from '../dto/file-upload.dto';
 import { UrlPathKeyEtagDto } from '../dto/url-pathKey-etag.dto';
 import { CurrentUserDto } from '../../users/dto/current-user.dto';
 import { ImagesBlogsWallpaperMetadataEntity } from '../entities/images-blog-wallpaper-metadata.entity';
-import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
+import { UuidErrorResolver } from '../../../../../../libs/common/src/helpers/uuid-error-resolver';
 
 export class ImagesBlogsMainMetadataRepo {
   constructor(

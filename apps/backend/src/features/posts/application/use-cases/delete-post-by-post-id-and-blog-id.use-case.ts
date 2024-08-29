@@ -12,7 +12,7 @@ import { PostsRepo } from '../../infrastructure/posts-repo';
 import { BloggerBlogsRepo } from '../../../blogger-blogs/infrastructure/blogger-blogs.repo';
 import { BloggerBlogsEntity } from '../../../blogger-blogs/entities/blogger-blogs.entity';
 import { PostsEntity } from '../../entities/posts.entity';
-import { BlogIdPostIdParams } from '../../../../../../libs/common/src/query/params/blogId-postId.params';
+import { BlogIdPostIdParams } from '../../../../../../../libs/common/src/query/params/blogId-postId.params';
 
 export class DeletePostByPostIdAndBlogIdCommand {
   constructor(

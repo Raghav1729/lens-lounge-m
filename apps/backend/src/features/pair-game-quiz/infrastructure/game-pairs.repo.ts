@@ -15,11 +15,11 @@ import { PlayersResultDto } from '../dto/players-result.dto';
 import { ChallengesQuestionsRepo } from './challenges-questions.repo';
 import { PairsGameEntity } from '../entities/pairs-game.entity';
 import { PairsCountPairsDto } from '../dto/pairs-count-pairs.dto';
-import { KeyResolver } from '../../../../../libs/common/src/helpers/key-resolver';
-import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
-import { ParseQueriesDto } from '../../../../../libs/common/src/query/dto/parse-queries.dto';
-import { SortDirectionEnum } from '../../../../../libs/common/src/query/enums/sort-direction.enum';
-import { ErrorMessages } from '../../../../../libs/common/src/filters/custom-errors-messages';
+import { KeyResolver } from '../../../../../../libs/common/src/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../../../libs/common/src/helpers/uuid-error-resolver';
+import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { SortDirectionEnum } from '../../../../../../libs/common/src/query/enums/sort-direction.enum';
+import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class GamePairsRepo {
   constructor(

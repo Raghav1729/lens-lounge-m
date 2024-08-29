@@ -4,10 +4,10 @@ import { UsersEntity } from '../../../users/entities/users.entity';
 import { GamesResultsEnum } from '../../enums/games-results.enum';
 import { GamesStatisticsViewModel } from '../../views/games-statistics.view-model';
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
-import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
-import { PaginatorDto } from '../../../../../../libs/common/src/helpers/paginator.dto';
-import { SortType } from '../../../../../../libs/common/src/query/types/sort.type';
-import { SortDirectionEnum } from '../../../../../../libs/common/src/query/enums/sort-direction.enum';
+import { ParseQueriesDto } from '../../../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { PaginatorDto } from '../../../../../../../libs/common/src/helpers/paginator.dto';
+import { SortType } from '../../../../../../../libs/common/src/query/types/sort.type';
+import { SortDirectionEnum } from '../../../../../../../libs/common/src/query/enums/sort-direction.enum';
 
 export class GamesStatisticCommand {
   constructor(public queryData: ParseQueriesDto) {}

@@ -3,7 +3,7 @@ import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { UsersRepo } from '../../../users/infrastructure/users-repo';
 import { UsersEntity } from '../../../users/entities/users.entity';
 import { HttpException, HttpStatus } from '@nestjs/common';
-import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class ValidLoginOrEmailPasswordCommand {
   constructor(

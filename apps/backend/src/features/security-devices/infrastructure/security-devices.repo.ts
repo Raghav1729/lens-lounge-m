@@ -8,7 +8,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { SecurityDevicesEntity } from '../entities/session-devices.entity';
 import { PayloadDto } from '../../auth/dto/payload.dto';
 import { SecurityDeviceViewModel } from '../views/security-device.view-model';
-import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
+import { UuidErrorResolver } from '../../../../../../libs/common/src/helpers/uuid-error-resolver';
 
 @Injectable()
 export class SecurityDevicesRepo {

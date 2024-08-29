@@ -26,8 +26,8 @@ import { ChallengeQuestionsEntity } from '../pair-game-quiz/entities/challenge-q
 import { QuestionsQuizEntity } from '../sa-quiz-questions/entities/questions-quiz.entity';
 import { GameQuestionsRepo } from '../pair-game-quiz/infrastructure/game-questions.repo';
 import { AuthService } from '../auth/application/auth.service';
-import { KeyResolver } from '../../../../libs/common/src/helpers/key-resolver';
-import { UuidErrorResolver } from '../../../../libs/common/src/helpers/uuid-error-resolver';
+import { KeyResolver } from '../../../../../libs/common/src/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
 
 const securityDevicesCases = [
   SearchDevicesUseCase,

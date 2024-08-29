@@ -52,10 +52,10 @@ import { ImagesBlogsMainMetadataRepo } from '../blogger-blogs/infrastructure/ima
 import { SaConfig } from '../../config/sa/sa.config';
 import { FilesMetadataService } from '../../adapters/media-services/files/files-metadata.service';
 import { BloggerBlogsService } from '../blogger-blogs/application/blogger-blogs.service';
-import { KeyResolver } from '../../../../libs/common/src/helpers/key-resolver';
-import { UuidErrorResolver } from '../../../../libs/common/src/helpers/uuid-error-resolver';
-import { CalculatorExpirationDate } from '../../../../libs/common/src/helpers/calculator-expiration-date/calculator-expiration-date';
-import { ParseQueriesService } from '../../../../libs/common/src/query/parse-queries.service';
+import { KeyResolver } from '../../../../../libs/common/src/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
+import { CalculatorExpirationDate } from '../../../../../libs/common/src/helpers/calculator-expiration-date/calculator-expiration-date';
+import { ParseQueriesService } from '../../../../../libs/common/src/query/parse-queries.service';
 
 const postsUseCases = [
   GetPostsUseCase,

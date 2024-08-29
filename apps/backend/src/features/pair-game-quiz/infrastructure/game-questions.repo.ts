@@ -12,10 +12,10 @@ import { QuestionsAndCountDto } from '../../sa-quiz-questions/dto/questions-and-
 import { ComplexityEnums } from '../enums/complexity.enums';
 import { dictionaryQuestions } from '../questions/dictionary-questions';
 import * as crypto from 'crypto';
-import { KeyResolver } from '../../../../../libs/common/src/helpers/key-resolver';
-import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
-import { ParseQueriesDto } from '../../../../../libs/common/src/query/dto/parse-queries.dto';
-import { SortDirectionEnum } from '../../../../../libs/common/src/query/enums/sort-direction.enum';
+import { KeyResolver } from '../../../../../../libs/common/src/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../../../libs/common/src/helpers/uuid-error-resolver';
+import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { SortDirectionEnum } from '../../../../../../libs/common/src/query/enums/sort-direction.enum';
 
 export class GameQuestionsRepo {
   constructor(

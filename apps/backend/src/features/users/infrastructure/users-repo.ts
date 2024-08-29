@@ -18,9 +18,9 @@ import { DataForCreateUserDto } from '../dto/data-for-create-user.dto';
 import { BanInfoDto } from '../dto/ban-info.dto';
 import { GamePairsRepo } from '../../pair-game-quiz/infrastructure/game-pairs.repo';
 import { PairsGameEntity } from '../../pair-game-quiz/entities/pairs-game.entity';
-import { KeyResolver } from '../../../../../libs/common/src/helpers/key-resolver';
-import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
-import { ParseQueriesDto } from '../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { KeyResolver } from '../../../../../../libs/common/src/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../../../libs/common/src/helpers/uuid-error-resolver';
+import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
 
 export class UsersRepo {
   constructor(

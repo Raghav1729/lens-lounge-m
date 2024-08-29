@@ -39,8 +39,8 @@ import { LikeStatusPostsRepo } from '../posts/infrastructure/like-status-posts.r
 import { InitializeS3Client } from '../../config/aws/s3/initialize-s3-client';
 import { AwsConfig } from '../../config/aws/aws.config';
 import { FilesMetadataService } from '../../adapters/media-services/files/files-metadata.service';
-import { KeyResolver } from '../../../../libs/common/src/helpers/key-resolver';
-import { UuidErrorResolver } from '../../../../libs/common/src/helpers/uuid-error-resolver';
+import { KeyResolver } from '../../../../../libs/common/src/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
 
 const commentsUseCases = [
   GetCommentsByUserIdUseCase,

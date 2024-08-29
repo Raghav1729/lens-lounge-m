@@ -35,9 +35,9 @@ import { GamePairsRepo } from '../../../../backend/src/features/pair-game-quiz/i
 import { GameQuestionsRepo } from '../../../../backend/src/features/pair-game-quiz/infrastructure/game-questions.repo';
 import { PaymentTransactionsRepo } from '../../infrastructure/payment-transactions.repo';
 import { ChallengesQuestionsRepo } from '../../../../backend/src/features/pair-game-quiz/infrastructure/challenges-questions.repo';
-import { UuidErrorResolver } from '../../../../libs/common/src/helpers/uuid-error-resolver';
-import { KeyResolver } from '../../../../libs/common/src/helpers/key-resolver';
-import { ParseQueriesService } from '../../../../libs/common/src/query/parse-queries.service';
+import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
+import { KeyResolver } from '../../../../../libs/common/src/helpers/key-resolver';
+import { ParseQueriesService } from '../../../../../libs/common/src/query/parse-queries.service';
 
 const stripeUseCases = [
   ConstructStripeEventUseCase,

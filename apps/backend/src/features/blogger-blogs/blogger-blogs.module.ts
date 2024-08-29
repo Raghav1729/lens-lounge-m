@@ -50,10 +50,10 @@ import { TelegramBotStatusEntity } from '../telegram/entities/telegram-bot-statu
 import { TelegramBotStatusRepo } from '../telegram/infrastructure/telegram-bot-status.repo';
 import { FilesMetadataService } from '../../adapters/media-services/files/files-metadata.service';
 import { FilesStorageAdapter } from '../../adapters/media-services/files-storage-adapter';
-import { ParseQueriesService } from '../../../../libs/common/src/query/parse-queries.service';
-import { BlogExistsValidator } from '../../../../libs/common/src/validators/blog-exists.validator';
-import { KeyResolver } from '../../../../libs/common/src/helpers/key-resolver';
-import { UuidErrorResolver } from '../../../../libs/common/src/helpers/uuid-error-resolver';
+import { ParseQueriesService } from '../../../../../libs/common/src/query/parse-queries.service';
+import { BlogExistsValidator } from '../../../../../libs/common/src/validators/blog-exists.validator';
+import { KeyResolver } from '../../../../../libs/common/src/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
 
 const bloggersBlogUseCases = [
   GetBlogsOwnedByCurrentUserUseCase,

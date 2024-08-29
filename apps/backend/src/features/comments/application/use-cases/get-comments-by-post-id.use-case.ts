@@ -4,8 +4,8 @@ import { CurrentUserDto } from '../../../users/dto/current-user.dto';
 import { PostsRepo } from '../../../posts/infrastructure/posts-repo';
 import { CommentsRepo } from '../../infrastructure/comments.repo';
 import { CommentsAndCountDto } from '../../dto/comments-and-count.dto';
-import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
-import { PaginatorDto } from '../../../../../../libs/common/src/helpers/paginator.dto';
+import { ParseQueriesDto } from '../../../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { PaginatorDto } from '../../../../../../../libs/common/src/helpers/paginator.dto';
 
 export class GetCommentsByPostIdCommand {
   constructor(

@@ -3,7 +3,7 @@ import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { HttpException, HttpStatus, NotFoundException } from '@nestjs/common';
 import { SecurityDevicesRepo } from '../../infrastructure/security-devices.repo';
 import { SecurityDevicesEntity } from '../../entities/session-devices.entity';
-import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class RemoveDevicesByDeviceIdCommand {
   constructor(

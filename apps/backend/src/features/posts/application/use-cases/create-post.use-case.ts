@@ -19,7 +19,7 @@ import { PostWithLikesInfoViewModel } from '../../views/post-with-likes-info.vie
 import { PostWithLikesImagesInfoViewModel } from '../../views/post-with-likes-images-info.view-model';
 import { SendNewBlogPostNotificationsCommand } from '../../../telegram/application/use-cases/send-new-blog-post-notifications.use-case';
 import { FilesMetadataService } from '../../../../adapters/media-services/files/files-metadata.service';
-import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class CreatePostCommand {
   constructor(

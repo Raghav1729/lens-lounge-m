@@ -15,9 +15,9 @@ import { CommentsEntity } from '../../comments/entities/comments.entity';
 import { PostsEntity } from '../../posts/entities/posts.entity';
 import { SaBanBlogDto } from '../../sa/dto/sa-ban-blog.dto';
 import { BloggerBlogsViewModel } from '../views/blogger-blogs.view-model';
-import { KeyResolver } from '../../../../../libs/common/src/helpers/key-resolver';
-import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
-import { ParseQueriesDto } from '../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { KeyResolver } from '../../../../../../libs/common/src/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../../../libs/common/src/helpers/uuid-error-resolver';
+import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
 
 export class BloggerBlogsRepo {
   constructor(

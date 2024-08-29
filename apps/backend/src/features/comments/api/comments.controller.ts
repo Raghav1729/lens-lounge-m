@@ -27,8 +27,8 @@ import { CommentViewModel } from '../views/comment.view-model';
 import { LikeStatusCommentsEntity } from '../entities/like-status-comments.entity';
 import { GetCommentByIdCommand } from '../application/use-cases/get-comment-by-id';
 import { ApiTags } from '@nestjs/swagger';
-import { IdParams } from '../../../../../libs/common/src/query/params/id.params';
-import { CommentIdParams } from '../../../../../libs/common/src/query/params/commentId.params';
+import { IdParams } from '../../../../../../libs/common/src/query/params/id.params';
+import { CommentIdParams } from '../../../../../../libs/common/src/query/params/commentId.params';
 
 @SkipThrottle()
 @ApiTags('Comments')

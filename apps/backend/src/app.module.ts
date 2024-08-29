@@ -32,8 +32,8 @@ import { SocketModule } from './socket/socket.module';
 import { StripeModule } from '../../payment-service/src/payment-systems/stripe/stripe.module';
 import { PayPalModule } from '../../payment-service/src/payment-systems/pay-pal/pay-pal.module';
 import { PaymentServiceModule } from '../../payment-service/src/payment-service.module';
-import { LibsModule } from '../../libs/libs.module';
-import { ApiDocumentationModule } from '../../libs/api-documentation/api-documentation.module';
+import { LibsModule } from '../../../libs/libs.module';
+import { ApiDocumentationModule } from '../../../libs/api-documentation/api-documentation.module';
 
 @Module({
   imports: [

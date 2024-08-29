@@ -17,7 +17,8 @@ async function bootstrap() {
   createApp(app);
 
   // Retrieve the configuration service to access environment variables
-  const configService = app.get(ConfigService<ConfigType, true>);
+  // const configService = app.get(ConfigService<ConfigType, true>);
+  const configService = app.get<ConfigService<ConfigType, true>>(ConfigService);
 
   // Retrieve the port from environment variables, default to 5000 if not provided
   const port = configService.get<number>('PORT') || 5000;

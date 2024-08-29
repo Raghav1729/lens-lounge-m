@@ -11,7 +11,7 @@ import { SubscriptionStatus } from '../enums/subscription-status.enums';
 import { BlogsSubscriptionStatusCountType } from '../types/blogs-subscription-status-count.type';
 import { BotStatus } from '../../telegram/enums/bot-status.enum';
 import { TelegramBotStatusEntity } from '../../telegram/entities/telegram-bot-status.entity';
-import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
+import { UuidErrorResolver } from '../../../../../../libs/common/src/helpers/uuid-error-resolver';
 
 export class BlogsSubscribersRepo {
   constructor(

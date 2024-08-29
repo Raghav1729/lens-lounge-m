@@ -19,7 +19,7 @@ import { CurrentUserDto } from '../../../../../backend/src/features/users/dto/cu
 import { GuestUsersDto } from '../../../../../backend/src/features/users/dto/guest-users.dto';
 import { PaymentSystem } from '../../../enums/payment-system.enums';
 import { BuyProductsCommand } from '../../../application/use-cases/buy-products.use-case';
-import { ParseQueriesService } from '../../../../../libs/common/src/query/parse-queries.service';
+import { ParseQueriesService } from '../../../../../../libs/common/src/query/parse-queries.service';
 
 @ApiTags('Stripe')
 @Controller('stripe')

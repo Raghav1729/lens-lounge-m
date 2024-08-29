@@ -15,7 +15,7 @@ import { BloggerBlogsEntity } from '../../entities/blogger-blogs.entity';
 import { BannedUsersForBlogsRepo } from '../../../users/infrastructure/banned-users-for-blogs.repo';
 import { UsersRepo } from '../../../users/infrastructure/users-repo';
 import { UsersEntity } from '../../../users/entities/users.entity';
-import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class ManageBlogAccessCommand {
   constructor(

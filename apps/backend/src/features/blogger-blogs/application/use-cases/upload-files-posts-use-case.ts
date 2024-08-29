@@ -21,7 +21,7 @@ import { KeysPathDto } from '../../../posts/dto/keys-path.dto';
 import { OriginalMiddleSmallEntitiesDto } from '../../../posts/dto/original-middle-small-entities.dto';
 import { FilesStorageAdapter } from '../../../../adapters/media-services/files-storage-adapter';
 import { FilesMetadataService } from '../../../../adapters/media-services/files/files-metadata.service';
-import { BlogIdPostIdParams } from '../../../../../../libs/common/src/query/params/blogId-postId.params';
+import { BlogIdPostIdParams } from '../../../../../../../libs/common/src/query/params/blogId-postId.params';
 
 export class UploadFilesPostsCommand {
   constructor(

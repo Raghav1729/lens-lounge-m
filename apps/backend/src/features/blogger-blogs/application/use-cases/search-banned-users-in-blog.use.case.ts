@@ -9,8 +9,8 @@ import { CaslAbilityFactory } from '../../../../ability/casl-ability.factory';
 import { BannedUsersEntityAndCountDto } from '../../dto/banned-users-entity-and-count.dto';
 import { BannedUserForBlogViewModel } from '../../../users/views/banned-user-for-blog.view-model';
 import { BannedUsersForBlogsEntity } from '../../../users/entities/banned-users-for-blogs.entity';
-import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
-import { PaginatorDto } from '../../../../../../libs/common/src/helpers/paginator.dto';
+import { ParseQueriesDto } from '../../../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { PaginatorDto } from '../../../../../../../libs/common/src/helpers/paginator.dto';
 
 export class SearchBannedUsersInBlogCommand {
   constructor(

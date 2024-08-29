@@ -4,8 +4,8 @@ import { BloggerBlogsService } from '../../../blogger-blogs/application/blogger-
 import { BlogsSubscribersRepo } from '../../../blogger-blogs/infrastructure/blogs-subscribers.repo';
 import { CurrentUserDto } from '../../../users/dto/current-user.dto';
 import { BloggerBlogsWithImagesSubscribersViewModel } from '../../../blogger-blogs/views/blogger-blogs-with-images-subscribers.view-model';
-import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
-import { PaginatorDto } from '../../../../../../libs/common/src/helpers/paginator.dto';
+import { ParseQueriesDto } from '../../../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { PaginatorDto } from '../../../../../../../libs/common/src/helpers/paginator.dto';
 
 export class SearchBlogsCommand {
   constructor(

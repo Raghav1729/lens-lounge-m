@@ -3,8 +3,8 @@ import { BloggerBlogsRepo } from '../../../blogger-blogs/infrastructure/blogger-
 import { BlogsCountBlogsDto } from '../../../blogger-blogs/dto/blogs-count-blogs.dto';
 import { SaService } from '../sa.service';
 import { SaBloggerBlogsViewModel } from '../../views/sa-blogger-blogs.view-model';
-import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
-import { PaginatorDto } from '../../../../../../libs/common/src/helpers/paginator.dto';
+import { ParseQueriesDto } from '../../../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { PaginatorDto } from '../../../../../../../libs/common/src/helpers/paginator.dto';
 
 export class SaFindBlogsCommand {
   constructor(public queryData: ParseQueriesDto) {}

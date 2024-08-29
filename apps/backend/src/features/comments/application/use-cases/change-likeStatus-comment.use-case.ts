@@ -12,7 +12,7 @@ import { CaslAbilityFactory } from '../../../../ability/casl-ability.factory';
 import { CommentsRepo } from '../../infrastructure/comments.repo';
 import { LikeStatusCommentsEntity } from '../../entities/like-status-comments.entity';
 import { BannedUsersForBlogsRepo } from '../../../users/infrastructure/banned-users-for-blogs.repo';
-import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class ChangeLikeStatusCommentCommand {
   constructor(

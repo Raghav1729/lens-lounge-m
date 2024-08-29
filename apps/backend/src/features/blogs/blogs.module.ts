@@ -41,9 +41,9 @@ import { BlogsSubscribersEntity } from '../blogger-blogs/entities/blogs-subscrib
 import { TelegramBotStatusEntity } from '../telegram/entities/telegram-bot-status.entity';
 import { JwtService } from '@nestjs/jwt';
 import { FilesMetadataService } from '../../adapters/media-services/files/files-metadata.service';
-import { KeyResolver } from '../../../../libs/common/src/helpers/key-resolver';
-import { UuidErrorResolver } from '../../../../libs/common/src/helpers/uuid-error-resolver';
-import { ParseQueriesService } from '../../../../libs/common/src/query/parse-queries.service';
+import { KeyResolver } from '../../../../../libs/common/src/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
+import { ParseQueriesService } from '../../../../../libs/common/src/query/parse-queries.service';
 
 const blogsUseCases = [SearchBlogsUseCase, GetBlogByIdUseCase];
 

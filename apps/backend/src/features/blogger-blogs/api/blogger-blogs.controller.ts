@@ -45,18 +45,18 @@ import { UploadFilesPostsCommand } from '../application/use-cases/upload-files-p
 import { UploadFilesBlogWallpaperCommand } from '../application/use-cases/upload-files-blogs-wallpaper-use-case';
 import { ApiTags } from '@nestjs/swagger';
 import { BloggerBlogsWithImagesSubscribersViewModel } from '../views/blogger-blogs-with-images-subscribers.view-model';
-import { ApiDocService } from '../../../../../libs/api-documentation/api-doc-service';
-import { EndpointKeys } from '../../../../../libs/api-documentation/enums/endpoint-keys.enum';
-import { BloggersMethods } from '../../../../../libs/api-documentation/enums/bloggers-methods.enum';
-import { ParseQueriesService } from '../../../../../libs/common/src/query/parse-queries.service';
-import { BlogIdPostIdParams } from '../../../../../libs/common/src/query/params/blogId-postId.params';
-import { FileValidationPipe } from '../../../../../libs/common/src/pipes/file-validation.pipe';
-import { getFileConstraints } from '../../../../../libs/common/src/pipes/file-constraints/file-constraints';
-import { BlogIdParams } from '../../../../../libs/common/src/query/params/blogId.params';
-import { PaginatorDto } from '../../../../../libs/common/src/helpers/paginator.dto';
-import { ParseQueriesDto } from '../../../../../libs/common/src/query/dto/parse-queries.dto';
-import { IdParams } from '../../../../../libs/common/src/query/params/id.params';
-import { BlogExistValidationPipe } from '../../../../../libs/common/src/pipes/blog-exist-validation.pipe';
+import { ApiDocService } from '../../../../../../libs/api-documentation/api-doc-service';
+import { EndpointKeys } from '../../../../../../libs/api-documentation/enums/endpoint-keys.enum';
+import { BloggersMethods } from '../../../../../../libs/api-documentation/enums/bloggers-methods.enum';
+import { ParseQueriesService } from '../../../../../../libs/common/src/query/parse-queries.service';
+import { BlogIdPostIdParams } from '../../../../../../libs/common/src/query/params/blogId-postId.params';
+import { FileValidationPipe } from '../../../../../../libs/common/src/pipes/file-validation.pipe';
+import { getFileConstraints } from '../../../../../../libs/common/src/pipes/file-constraints/file-constraints';
+import { BlogIdParams } from '../../../../../../libs/common/src/query/params/blogId.params';
+import { PaginatorDto } from '../../../../../../libs/common/src/helpers/paginator.dto';
+import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { IdParams } from '../../../../../../libs/common/src/query/params/id.params';
+import { BlogExistValidationPipe } from '../../../../../../libs/common/src/pipes/blog-exist-validation.pipe';
 
 @SkipThrottle()
 @ApiTags('Blogger')

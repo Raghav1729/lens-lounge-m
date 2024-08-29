@@ -15,7 +15,7 @@ import { ProductsDataEntity } from '../../backend/src/features/products/entities
 import { ProductsRepo } from '../../backend/src/features/products/infrastructure/products.repo';
 import { PaymentService } from './application/payment.service';
 import { PaymentServiceController } from './api/payment-service.controller';
-import { UuidErrorResolver } from '../../libs/common/src/helpers/uuid-error-resolver';
+import { UuidErrorResolver } from '../../../libs/common/src/helpers/uuid-error-resolver';
 import { CustomConfigModule } from '../../backend/src/config/custom.config-module';
 
 const paymentUseCases = [BuyProductsUseCase];

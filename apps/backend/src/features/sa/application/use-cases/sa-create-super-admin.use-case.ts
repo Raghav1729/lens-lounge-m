@@ -3,8 +3,8 @@ import { DataForCreateUserDto } from '../../../users/dto/data-for-create-user.dt
 import { UsersEntity } from '../../../users/entities/users.entity';
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { SaConfig } from '../../../../config/sa/sa.config';
-import { CalculatorExpirationDate } from '../../../../../../libs/common/src/helpers/calculator-expiration-date/calculator-expiration-date';
-import { ExpirationDateDto } from '../../../../../../libs/common/src/helpers/calculator-expiration-date/dto/expiration-date.dto';
+import { CalculatorExpirationDate } from '../../../../../../../libs/common/src/helpers/calculator-expiration-date/calculator-expiration-date';
+import { ExpirationDateDto } from '../../../../../../../libs/common/src/helpers/calculator-expiration-date/dto/expiration-date.dto';
 
 export class CreateSaUserCommand {}
 

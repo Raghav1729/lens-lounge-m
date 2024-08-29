@@ -24,12 +24,12 @@ import { ManageBlogsSubscribeCommand } from '../../blogger-blogs/application/use
 import { SubscriptionStatus } from '../../blogger-blogs/enums/subscription-status.enums';
 import { JwtAuthGuard } from '../../auth/guards/jwt-auth.guard';
 import { ApiTags } from '@nestjs/swagger';
-import { ParseQueriesService } from '../../../../../libs/common/src/query/parse-queries.service';
-import { PaginatorDto } from '../../../../../libs/common/src/helpers/paginator.dto';
-import { ParseQueriesDto } from '../../../../../libs/common/src/query/dto/parse-queries.dto';
-import { IdParams } from '../../../../../libs/common/src/query/params/id.params';
-import { BlogIdParams } from '../../../../../libs/common/src/query/params/blogId.params';
-import { BlogExistValidationPipe } from '../../../../../libs/common/src/pipes/blog-exist-validation.pipe';
+import { ParseQueriesService } from '../../../../../../libs/common/src/query/parse-queries.service';
+import { PaginatorDto } from '../../../../../../libs/common/src/helpers/paginator.dto';
+import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { IdParams } from '../../../../../../libs/common/src/query/params/id.params';
+import { BlogIdParams } from '../../../../../../libs/common/src/query/params/blogId.params';
+import { BlogExistValidationPipe } from '../../../../../../libs/common/src/pipes/blog-exist-validation.pipe';
 
 @SkipThrottle()
 @ApiTags('Blogs')

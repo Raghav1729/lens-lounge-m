@@ -22,7 +22,7 @@ import { GameOverEvent } from '../../events/game-over.event';
 import { StatusGameEnum } from '../../enums/status-game.enum';
 import { GamePairsRepo } from '../../infrastructure/game-pairs.repo';
 import { ChallengeQuestionsEntity } from '../../entities/challenge-questions.entity';
-import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class SubmitAnswerCommand {
   constructor(

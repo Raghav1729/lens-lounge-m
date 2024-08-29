@@ -8,7 +8,7 @@ import { BloggerBlogsRepo } from '../../../blogger-blogs/infrastructure/blogger-
 import { BloggerBlogsEntity } from '../../../blogger-blogs/entities/blogger-blogs.entity';
 import { UsersRepo } from '../../../users/infrastructure/users-repo';
 import { UsersEntity } from '../../../users/entities/users.entity';
-import { IdUserIdParams } from '../../../../../../libs/common/src/query/params/id-userId.params';
+import { IdUserIdParams } from '../../../../../../../libs/common/src/query/params/id-userId.params';
 
 export class SaBindBlogWithUserCommand {
   constructor(

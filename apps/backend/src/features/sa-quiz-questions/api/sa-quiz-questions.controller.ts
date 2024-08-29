@@ -23,9 +23,9 @@ import { SaDeleteQuestionByIdCommand } from '../application/use-cases/sa-delete-
 import { UpdatePublishDto } from '../dto/update-publish.dto';
 import { SaUpdateQuestionsPublishCommand } from '../application/use-cases/sa-update-questions-publish.use-case';
 import { ApiTags } from '@nestjs/swagger';
-import { ParseQueriesService } from '../../../../../libs/common/src/query/parse-queries.service';
-import { ParseQueriesDto } from '../../../../../libs/common/src/query/dto/parse-queries.dto';
-import { IdParams } from '../../../../../libs/common/src/query/params/id.params';
+import { ParseQueriesService } from '../../../../../../libs/common/src/query/parse-queries.service';
+import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { IdParams } from '../../../../../../libs/common/src/query/params/id.params';
 
 @ApiTags('Super Admin Quiz Questions')
 @Controller('sa/quiz/questions')

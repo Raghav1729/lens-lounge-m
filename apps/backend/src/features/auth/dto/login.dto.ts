@@ -1,5 +1,5 @@
 import { IsNotEmpty, Length, Matches, Validate } from 'class-validator';
-import { LoginEmailExistsValidator } from '../../../../../libs/common/src/validators/login-email-exists.validator';
+import { LoginEmailExistsValidator } from '../../../../../../libs/common/src/validators/login-email-exists.validator';
 
 export class LoginDto {
   @IsNotEmpty()

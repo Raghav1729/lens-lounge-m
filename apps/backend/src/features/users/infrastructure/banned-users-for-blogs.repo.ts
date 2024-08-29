@@ -9,9 +9,9 @@ import { BloggerBlogsEntity } from '../../blogger-blogs/entities/blogger-blogs.e
 import { LikeStatusPostsEntity } from '../../posts/entities/like-status-posts.entity';
 import { LikeStatusCommentsEntity } from '../../comments/entities/like-status-comments.entity';
 import { CommentsEntity } from '../../comments/entities/comments.entity';
-import { KeyResolver } from '../../../../../libs/common/src/helpers/key-resolver';
-import { ParseQueriesDto } from '../../../../../libs/common/src/query/dto/parse-queries.dto';
-import { SortDirectionEnum } from '../../../../../libs/common/src/query/enums/sort-direction.enum';
+import { KeyResolver } from '../../../../../../libs/common/src/helpers/key-resolver';
+import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { SortDirectionEnum } from '../../../../../../libs/common/src/query/enums/sort-direction.enum';
 
 export class BannedUsersForBlogsRepo {
   constructor(

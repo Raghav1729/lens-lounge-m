@@ -7,7 +7,7 @@ import { CommandBus } from '@nestjs/cqrs';
 import { Socket } from 'socket.io';
 import { PayloadDto } from '../../features/auth/dto/payload.dto';
 import { ValidAccessJwtCommand } from '../../features/auth/application/use-cases/valid-access-jwt.use-case';
-import { ErrorMessages } from '../../../../libs/common/src/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../libs/common/src/filters/custom-errors-messages';
 
 @Injectable()
 export class ValidSocketHandshake {

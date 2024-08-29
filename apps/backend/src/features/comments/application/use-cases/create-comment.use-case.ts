@@ -7,7 +7,7 @@ import { CommentsRepo } from '../../infrastructure/comments.repo';
 import { CommentViewModel } from '../../views/comment.view-model';
 import { BannedUsersForBlogsRepo } from '../../../users/infrastructure/banned-users-for-blogs.repo';
 import { PostsEntity } from '../../../posts/entities/posts.entity';
-import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class CreateCommentCommand {
   constructor(

@@ -3,8 +3,8 @@ import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { UsersRepo } from '../../infrastructure/users-repo';
 import { UsersEntity } from '../../entities/users.entity';
 import { UpdatedConfirmationCodeEvent } from '../../../auth/events/updated-confirmation-code.event';
-import { CalculatorExpirationDate } from '../../../../../../libs/common/src/helpers/calculator-expiration-date/calculator-expiration-date';
-import { ExpirationDateDto } from '../../../../../../libs/common/src/helpers/calculator-expiration-date/dto/expiration-date.dto';
+import { CalculatorExpirationDate } from '../../../../../../../libs/common/src/helpers/calculator-expiration-date/calculator-expiration-date';
+import { ExpirationDateDto } from '../../../../../../../libs/common/src/helpers/calculator-expiration-date/dto/expiration-date.dto';
 
 export class UpdateSentConfirmationCodeCommand {
   constructor(public email: string) {}

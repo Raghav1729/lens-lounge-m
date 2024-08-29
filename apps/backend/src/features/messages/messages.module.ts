@@ -18,8 +18,8 @@ import { QuestionsQuizEntity } from '../sa-quiz-questions/entities/questions-qui
 import { JwtConfig } from '../../config/jwt/jwt.config';
 import { CqrsModule } from '@nestjs/cqrs';
 import { ValidSocketHandshake } from '../../socket/validation/valid-socket-handshake';
-import { KeyResolver } from '../../../../libs/common/src/helpers/key-resolver';
-import { UuidErrorResolver } from '../../../../libs/common/src/helpers/uuid-error-resolver';
+import { KeyResolver } from '../../../../../libs/common/src/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
 
 const helpers = [KeyResolver, UuidErrorResolver];
 

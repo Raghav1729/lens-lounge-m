@@ -11,7 +11,7 @@ import { InvalidJwtRepo } from '../infrastructure/invalid-jwt-repo';
 import { RefreshTokenDto } from '../dto/refresh-token.dto';
 import { validate } from 'class-validator';
 import { PayloadDto } from '../dto/payload.dto';
-import { ErrorMessages } from '../../../../../libs/common/src/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
 
 @Injectable()
 export class CookiesJwtVerificationGuard implements CanActivate {

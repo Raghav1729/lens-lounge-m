@@ -1,9 +1,9 @@
 import { UsersRepo } from '../../../users/infrastructure/users-repo';
 import { UsersService } from '../../../users/application/users.service';
 import { SaUserViewModel } from '../../views/sa-user-view-model';
-import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { ParseQueriesDto } from '../../../../../../../libs/common/src/query/dto/parse-queries.dto';
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
-import { PaginatorDto } from '../../../../../../libs/common/src/helpers/paginator.dto';
+import { PaginatorDto } from '../../../../../../../libs/common/src/helpers/paginator.dto';
 
 export class SaFindUsersCommand {
   constructor(public queryData: ParseQueriesDto) {}

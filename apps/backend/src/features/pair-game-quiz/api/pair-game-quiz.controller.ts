@@ -31,9 +31,9 @@ import { JwtAuthAndActiveGameGuard } from '../../auth/guards/jwt-auth-and-active
 import { CurrentUserAndActiveGameDto } from '../../users/dto/current-user-and-active-game.dto';
 import { PairsGameEntity } from '../entities/pairs-game.entity';
 import { ApiTags } from '@nestjs/swagger';
-import { ParseQueriesService } from '../../../../../libs/common/src/query/parse-queries.service';
-import { ParseQueriesDto } from '../../../../../libs/common/src/query/dto/parse-queries.dto';
-import { PaginatorDto } from '../../../../../libs/common/src/helpers/paginator.dto';
+import { ParseQueriesService } from '../../../../../../libs/common/src/query/parse-queries.service';
+import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { PaginatorDto } from '../../../../../../libs/common/src/helpers/paginator.dto';
 
 @SkipThrottle()
 @ApiTags('Pair-game-quiz')

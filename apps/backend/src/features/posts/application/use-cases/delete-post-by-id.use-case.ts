@@ -9,7 +9,7 @@ import { CaslAbilityFactory } from '../../../../ability/casl-ability.factory';
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { CurrentUserDto } from '../../../users/dto/current-user.dto';
 import { PostsRepo } from '../../infrastructure/posts-repo';
-import { IdParams } from '../../../../../../libs/common/src/query/params/id.params';
+import { IdParams } from '../../../../../../../libs/common/src/query/params/id.params';
 
 export class DeletePostByIdCommand {
   constructor(

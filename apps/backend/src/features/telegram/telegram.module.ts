@@ -24,8 +24,8 @@ import { SendNewBlogPostNotificationsUseCase } from './application/use-cases/sen
 import { BlogsSubscribersRepo } from '../blogger-blogs/infrastructure/blogs-subscribers.repo';
 import { BlogsSubscribersEntity } from '../blogger-blogs/entities/blogs-subscribers.entity';
 import { TelegramAdapter } from '../../adapters/telegram/telegram.adapter';
-import { KeyResolver } from '../../../../libs/common/src/helpers/key-resolver';
-import { UuidErrorResolver } from '../../../../libs/common/src/helpers/uuid-error-resolver';
+import { KeyResolver } from '../../../../../libs/common/src/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
 
 const telegramUseCases = [
   SendOurWebhookToTelegramUseCase,

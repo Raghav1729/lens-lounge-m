@@ -15,7 +15,7 @@ import * as uuid4 from 'uuid4';
 import { ApiProperty } from '@nestjs/swagger';
 import { MessagesEntity } from '../../messages/entities/messages.entity';
 import { ConversationsEntity } from '../../messages/entities/conversations.entity';
-import { SentCodesLogEntity } from '../../../../../libs/mails/entities/sent-codes-log.entity';
+import { SentCodesLogEntity } from '../../../../../../libs/mails/entities/sent-codes-log.entity';
 
 @Entity('Users')
 @Unique(['userId', 'login', 'email', 'confirmationCode'])

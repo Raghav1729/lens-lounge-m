@@ -11,8 +11,8 @@
 /apps/payment-service/dist
 /apps/payment-service/node_modules
 
-/apps/libs/dist
-/apps/libs/node_modules
+/libs/dist
+/libs/node_modules
 
 
 # .env.dev environment variables file

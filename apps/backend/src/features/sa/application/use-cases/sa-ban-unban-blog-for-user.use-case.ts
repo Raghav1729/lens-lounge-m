@@ -12,7 +12,7 @@ import { ForbiddenError } from '@casl/ability';
 import { CurrentUserDto } from '../../../users/dto/current-user.dto';
 import { BloggerBlogsRepo } from '../../../blogger-blogs/infrastructure/blogger-blogs.repo';
 import { BloggerBlogsEntity } from '../../../blogger-blogs/entities/blogger-blogs.entity';
-import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class SaBanUnbanBlogCommand {
   constructor(

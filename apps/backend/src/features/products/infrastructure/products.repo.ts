@@ -7,7 +7,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { ProductsDataEntity } from '../entities/products-data.entity';
 import { ProductRequest } from '../dto/products-request.dto';
-import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
+import { UuidErrorResolver } from '../../../../../../libs/common/src/helpers/uuid-error-resolver';
 
 @Injectable()
 export class ProductsRepo {

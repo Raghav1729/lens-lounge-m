@@ -38,13 +38,13 @@ import { GetPostsCommand } from '../application/use-cases/get-posts.use-case';
 import { UpdatePostByPostIdCommand } from '../application/use-cases/update-post-by-post-id.use-case';
 import { PostWithLikesImagesInfoViewModel } from '../views/post-with-likes-images-info.view-model';
 import { ApiTags } from '@nestjs/swagger';
-import { ParseQueriesService } from '../../../../../libs/common/src/query/parse-queries.service';
-import { PaginatorDto } from '../../../../../libs/common/src/helpers/paginator.dto';
-import { ParseQueriesDto } from '../../../../../libs/common/src/query/dto/parse-queries.dto';
-import { PostExistValidationPipe } from '../../../../../libs/common/src/pipes/post-exist-validation.pipe';
-import { PostIdParams } from '../../../../../libs/common/src/query/params/postId.params';
-import { BlogIdPostIdParams } from '../../../../../libs/common/src/query/params/blogId-postId.params';
-import { IdParams } from '../../../../../libs/common/src/query/params/id.params';
+import { ParseQueriesService } from '../../../../../../libs/common/src/query/parse-queries.service';
+import { PaginatorDto } from '../../../../../../libs/common/src/helpers/paginator.dto';
+import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { PostExistValidationPipe } from '../../../../../../libs/common/src/pipes/post-exist-validation.pipe';
+import { PostIdParams } from '../../../../../../libs/common/src/query/params/postId.params';
+import { BlogIdPostIdParams } from '../../../../../../libs/common/src/query/params/blogId-postId.params';
+import { IdParams } from '../../../../../../libs/common/src/query/params/id.params';
 
 @SkipThrottle()
 @ApiTags('Posts')

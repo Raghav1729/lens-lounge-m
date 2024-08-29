@@ -13,8 +13,8 @@ import { OrdersRepo } from './infrastructure/orders.repo';
 import { OrderItemsRepo } from './infrastructure/order-items.repo';
 import { CreateOrderAndPaymentTransactionsUseCase } from './application/create-order-and-payment-transactions.use-case';
 import { PaymentTransactionsRepo } from '../../../../payment-service/src/infrastructure/payment-transactions.repo';
-import { ParseQueriesService } from '../../../../libs/common/src/query/parse-queries.service';
-import { UuidErrorResolver } from '../../../../libs/common/src/helpers/uuid-error-resolver';
+import { ParseQueriesService } from '../../../../../libs/common/src/query/parse-queries.service';
+import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
 
 const useCases = [
   CreateRandomProductsUseCase,

@@ -8,7 +8,7 @@ import { UsersEntity } from '../../users/entities/users.entity';
 import { CommandBus } from '@nestjs/cqrs';
 import { ValidLoginOrEmailPasswordCommand } from '../application/use-cases/valid-login-or-email-password.use-case';
 import { ValidLoginPasswordSizesCommand } from '../application/use-cases/valid-login-password-sizes.use-case';
-import { ErrorMessages } from '../../../../../libs/common/src/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
 
 @Injectable()
 export class BasicAuthGuard implements CanActivate {

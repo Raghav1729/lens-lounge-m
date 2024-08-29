@@ -5,8 +5,8 @@ import { EncryptConfig } from '../../../../config/encrypt/encrypt.config';
 import { UsersRepo } from '../../infrastructure/users-repo';
 import { DataForCreateUserDto } from '../../dto/data-for-create-user.dto';
 import { UsersEntity } from '../../entities/users.entity';
-import { ExpirationDateDto } from '../../../../../../libs/common/src/helpers/calculator-expiration-date/dto/expiration-date.dto';
-import { CalculatorExpirationDate } from '../../../../../../libs/common/src/helpers/calculator-expiration-date/calculator-expiration-date';
+import { ExpirationDateDto } from '../../../../../../../libs/common/src/helpers/calculator-expiration-date/dto/expiration-date.dto';
+import { CalculatorExpirationDate } from '../../../../../../../libs/common/src/helpers/calculator-expiration-date/calculator-expiration-date';
 
 export class CreateUserCommand {
   constructor(public createUserDto: CreateUserDto) {}

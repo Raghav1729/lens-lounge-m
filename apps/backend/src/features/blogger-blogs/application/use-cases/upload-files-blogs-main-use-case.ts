@@ -18,7 +18,7 @@ import { UploadFilesBlogWallpaperCommand } from './upload-files-blogs-wallpaper-
 import { FilesMetadataService } from '../../../../adapters/media-services/files/files-metadata.service';
 import { ImageWidthHeightSize } from '../../../../adapters/media-services/files/dto/image-width-height-size';
 import { FilesStorageAdapter } from '../../../../adapters/media-services/files-storage-adapter';
-import { BlogIdParams } from '../../../../../../libs/common/src/query/params/blogId.params';
+import { BlogIdParams } from '../../../../../../../libs/common/src/query/params/blogId.params';
 
 export class UploadFilesBlogsMainCommand {
   constructor(

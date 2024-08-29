@@ -12,8 +12,8 @@ import { BlogsSubscribersEntity } from '../../entities/blogs-subscribers.entity'
 import { ForbiddenError } from '@casl/ability';
 import { BannedUsersForBlogsRepo } from '../../../users/infrastructure/banned-users-for-blogs.repo';
 import { SubscriptionStatus } from '../../enums/subscription-status.enums';
-import { BlogIdParams } from '../../../../../../libs/common/src/query/params/blogId.params';
-import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
+import { BlogIdParams } from '../../../../../../../libs/common/src/query/params/blogId.params';
+import { ErrorMessages } from '../../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class ManageBlogsSubscribeCommand {
   constructor(

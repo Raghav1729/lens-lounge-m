@@ -7,7 +7,7 @@ import { PayloadDto } from '../dto/payload.dto';
 import { UsersEntity } from '../../users/entities/users.entity';
 import { GamePairsRepo } from '../../pair-game-quiz/infrastructure/game-pairs.repo';
 import { CurrentUserAndActiveGameDto } from '../../users/dto/current-user-and-active-game.dto';
-import { ErrorMessages } from '../../../../../libs/common/src/filters/custom-errors-messages';
+import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
 
 @Injectable()
 export class JwtAndActiveGameStrategy extends PassportStrategy(

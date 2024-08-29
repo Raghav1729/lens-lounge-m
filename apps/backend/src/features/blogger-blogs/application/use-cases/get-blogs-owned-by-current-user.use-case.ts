@@ -4,8 +4,8 @@ import { BlogsCountBlogsDto } from '../../dto/blogs-count-blogs.dto';
 import { BloggerBlogsRepo } from '../../infrastructure/blogger-blogs.repo';
 import { BloggerBlogsService } from '../blogger-blogs.service';
 import { BloggerBlogsViewModel } from '../../views/blogger-blogs.view-model';
-import { ParseQueriesDto } from '../../../../../../libs/common/src/query/dto/parse-queries.dto';
-import { PaginatorDto } from '../../../../../../libs/common/src/helpers/paginator.dto';
+import { ParseQueriesDto } from '../../../../../../../libs/common/src/query/dto/parse-queries.dto';
+import { PaginatorDto } from '../../../../../../../libs/common/src/helpers/paginator.dto';
 
 export class GetBlogsOwnedByCurrentUserCommand {
   constructor(

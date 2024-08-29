@@ -1,5 +1,5 @@
 import { IsNotEmpty, Length, Validate } from 'class-validator';
-import { BlogExistsValidator } from '../../../../../libs/common/src/validators/blog-exists.validator';
+import { BlogExistsValidator } from '../../../../../../libs/common/src/validators/blog-exists.validator';
 
 export class UpdatePostWithBlogIdDto {
   @IsNotEmpty()

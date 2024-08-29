@@ -34,10 +34,10 @@ import { LogoutCommand } from '../application/use-cases/logout.use-case';
 import { LoginCommand } from '../application/use-cases/login.use-case';
 import { RefreshTokenDto } from '../dto/refresh-token.dto';
 import { ApiTags } from '@nestjs/swagger';
-import { ApiDocService } from '../../../../../libs/api-documentation/api-doc-service';
-import { EndpointKeys } from '../../../../../libs/api-documentation/enums/endpoint-keys.enum';
-import { AuthMethods } from '../../../../../libs/api-documentation/enums/auth-methods.enum';
-import { ParseQueriesService } from '../../../../../libs/common/src/query/parse-queries.service';
+import { ApiDocService } from '../../../../../../libs/api-documentation/api-doc-service';
+import { EndpointKeys } from '../../../../../../libs/api-documentation/enums/endpoint-keys.enum';
+import { AuthMethods } from '../../../../../../libs/api-documentation/enums/auth-methods.enum';
+import { ParseQueriesService } from '../../../../../../libs/common/src/query/parse-queries.service';
 
 @SkipThrottle()
 @ApiTags('Auth')

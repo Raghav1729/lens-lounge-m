@@ -12,7 +12,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { PairsGameEntity } from '../entities/pairs-game.entity';
-import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
+import { UuidErrorResolver } from '../../../../../../libs/common/src/helpers/uuid-error-resolver';
 
 export class ChallengesAnswersRepo {
   constructor(

@@ -41,11 +41,11 @@ import { ChallengeQuestionsEntity } from '../pair-game-quiz/entities/challenge-q
 import { JwtAndActiveGameStrategy } from './strategies/jwt-and-active-game.strategy';
 import { ValidLoginPasswordSizesUseCase } from './application/use-cases/valid-login-password-sizes.use-case';
 import { StrategiesOptions } from './strategies/custom-strategies/strategies-options';
-import { KeyResolver } from '../../../../libs/common/src/helpers/key-resolver';
-import { UuidErrorResolver } from '../../../../libs/common/src/helpers/uuid-error-resolver';
-import { ParseQueriesService } from '../../../../libs/common/src/query/parse-queries.service';
-import { MailsService } from '../../../../libs/mails/application/mails.service';
-import { CalculatorExpirationDate } from '../../../../libs/common/src/helpers/calculator-expiration-date/calculator-expiration-date';
+import { KeyResolver } from '../../../../../libs/common/src/helpers/key-resolver';
+import { UuidErrorResolver } from '../../../../../libs/common/src/helpers/uuid-error-resolver';
+import { ParseQueriesService } from '../../../../../libs/common/src/query/parse-queries.service';
+import { MailsService } from '../../../../../libs/mails/application/mails.service';
+import { CalculatorExpirationDate } from '../../../../../libs/common/src/helpers/calculator-expiration-date/calculator-expiration-date';
 
 const authUseCases = [
   LoginUseCase,

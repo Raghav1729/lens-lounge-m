@@ -56,7 +56,6 @@
     "@types/axios": "^0.14.0",
     "@types/bcrypt": "^5.0.2",
     "@types/cookie-parser": "^1.4.7",
-    "@types/cron": "^2.4.0",
     "@types/joi": "^17.2.3",
     "@types/md5": "^2.3.5",
     "@types/nodemailer": "^6.4.14",

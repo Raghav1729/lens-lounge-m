@@ -1,7 +1,7 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { HttpException, HttpStatus } from '@nestjs/common';
-import { CustomErrorsMessagesType } from '../../../../../../libs/common/src/filters/types/custom-errors-messages.types';
-import { ErrorMessages } from '../../../../../../libs/common/src/filters/custom-errors-messages';
+import { CustomErrorsMessagesType } from '../../../../../../../libs/common/src/filters/types/custom-errors-messages.types';
+import { ErrorMessages } from '../../../../../../../libs/common/src/filters/custom-errors-messages';
 
 export class ValidLoginPasswordSizesCommand {
   constructor(
