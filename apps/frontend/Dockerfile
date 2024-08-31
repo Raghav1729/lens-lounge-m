@@ -32,5 +32,5 @@ services:
       - "3003:3003"
     environment:
       - NODE_ENV=development
-    stdin_open: true # keep the container running
-    tty: true # allocate a pseudo-TTY
+    stdin_open: true  # keep the container running
+    tty: true         # allocate a pseudo-TTY
