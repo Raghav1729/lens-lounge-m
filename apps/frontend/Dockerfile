@@ -1,25 +1,36 @@
-# Use an official node image as the base
-FROM node:18-alpine as build
+version: '3'
+services:
+  api-gateway:
+    build: ./apps/api-gateway
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - AUTH_SECRET_KEY=supersecret
+    depends_on:
+      - backend
+      - payment-service
+      - frontend
 
-# Set working directory
-WORKDIR /app
+  backend:
+    build: ./apps/backend
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=development
 
-# Install dependencies
-COPY package.json yarn.lock ./
-RUN yarn install
+  payment-service:
+    build: ./apps/payment-service
+    ports:
+      - "3002:3002"
+    environment:
+      - NODE_ENV=development
 
-# Copy the source code
-COPY . .
-
-# Build the app
-RUN yarn build
-
-# Use nginx to serve the app
-FROM nginx:alpine
-COPY --from=build /app/build /usr/share/nginx/html
-
-# Expose port 80
-EXPOSE 80
-
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+  frontend:
+    build: ./apps/frontend
+    ports:
+      - "3003:3003"
+    environment:
+      - NODE_ENV=development
+    stdin_open: true # keep the container running
+    tty: true # allocate a pseudo-TTY

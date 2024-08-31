@@ -6,15 +6,15 @@ import {
 } from '@nestjs/microservices';
 
 @Injectable()
-export class BackendProxyService implements OnModuleInit {
+export class PaymentServiceProxy implements OnModuleInit {
   private client: ClientProxy;
 
   onModuleInit() {
     this.client = ClientProxyFactory.create({
       transport: Transport.TCP,
       options: {
-        host: 'backend-service-host',
-        port: 3001,
+        host: 'payment-service', // Name of the service in Docker Compose
+        port: 3002, // Port that payment-service is exposed on
       },
     });
   }
