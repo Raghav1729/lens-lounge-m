@@ -19,6 +19,7 @@
     "start:dev.backend": "NODE_ENV=development nest start backend --watch",
     "start:dev.payment-service": "NODE_ENV=development nest start payment-service --watch",
     "start:dev:frontend": "cd apps/frontend && yarn start",
+    "start:dev:api-gateway": "cd apps/api-gateway && yarn start",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/apps/backend/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
