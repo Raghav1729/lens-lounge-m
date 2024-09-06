@@ -9,17 +9,28 @@ import {
 export class BackendProxy implements OnModuleInit {
   private client: ClientProxy;
 
+  // Initialize the client during module initialization
   onModuleInit() {
+    const host = process.env.BACKEND_SERVICE_HOST || 'localhost';
+    const port = parseInt(process.env.BACKEND_SERVICE_PORT) || 3001;
+
     this.client = ClientProxyFactory.create({
       transport: Transport.TCP,
       options: {
-        host: 'backend-service-host',
-        port: 3001,
+        host: host,
+        port: port,
       },
     });
+
+    // Optional: Add some logs or checks to ensure initialization worked
+    console.log(`BackendProxy initialized with host: ${host}, port: ${port}`);
   }
 
+  // Method to retrieve the client
   getClient() {
+    if (!this.client) {
+      throw new Error('BackendProxy client is not initialized');
+    }
     return this.client;
   }
 }
