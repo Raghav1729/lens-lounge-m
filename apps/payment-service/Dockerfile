@@ -1,13 +1,34 @@
-FROM --platform=linux/amd64 node:20.11.1-alpine
+# Step 1: Build the NestJS application
+FROM node:20 AS build
 
+# Set the working directory
 WORKDIR /app
 
-EXPOSE 83
-
-COPY package.json yarn.lock ./apps/payment-service/
-
+# Install dependencies
+COPY package.json yarn.lock ./
 RUN yarn install
 
-COPY . ./
+# Copy the rest of the application code
+COPY . .
 
-CMD ["yarn", "start"]
+# Build the application
+RUN yarn build
+
+# Step 2: Serve the application
+FROM node:20
+
+# Set the working directory
+WORKDIR /app
+
+# Copy only the build output from the previous stage
+COPY --from=build /app/dist ./dist
+
+# Install production dependencies
+COPY package.json yarn.lock ./
+RUN yarn install --production
+
+# Expose the port the app runs on
+EXPOSE 3002
+
+# Start the application
+CMD ["node", "dist/main.js"]

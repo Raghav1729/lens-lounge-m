@@ -4,18 +4,12 @@ FROM node:20 AS build
 # Set the working directory
 WORKDIR /app
 
-# Install Yarn 4.4.1 using the official installation script
-RUN curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 4.4.1
-
-# Ensure the PATH includes the directory where Yarn is installed
-ENV PATH="/root/.yarn/bin:${PATH}"
-
-# Check the Yarn version to confirm installation
-RUN yarn -v
+# Install a stable version of Yarn
+RUN npm install -g yarn@1.22.22
 
 # Install dependencies
 COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+RUN yarn install
 
 # Copy the rest of the application code
 COPY . .
