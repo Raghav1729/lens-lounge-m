@@ -61,9 +61,9 @@ export class ApiGatewayController {
       );
       res.send(response.data);
     } catch (err) {
-      console.error('Error handling frontend request:', err);
+      console.error('Error handling frontend-microservice request:', err);
       res.status(HttpStatus.INTERNAL_SERVER_ERROR).send({
-        message: 'Failed to load frontend content',
+        message: 'Failed to load frontend-microservice content',
         error: err.message,
       });
     }

@@ -27,7 +27,7 @@ services:
       - NODE_ENV=development
 
   frontend:
-    build: ./apps/frontend
+    build: ./apps/frontend-microservice
     ports:
       - "3003:3003"
     environment:

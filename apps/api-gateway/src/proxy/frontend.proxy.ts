@@ -20,6 +20,6 @@ export class FrontendProxy implements OnModuleInit {
   }
 
   getFrontendContent(url: string) {
-    return this.client.send({ cmd: 'get-frontend-content' }, url);
+    return this.client.send({ cmd: 'get-frontend-microservice-content' }, url);
   }
 }
