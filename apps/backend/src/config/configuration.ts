@@ -280,6 +280,14 @@ class Configuration {
     );
   }
 
+  private static getRedisUrl(): string {
+    return this.readEnvVariableWithDefault('REDIS_URL', 'REDIS_URL');
+  }
+
+  private static getGatewayPort(): number {
+    return Number(this.readEnvVariableWithDefault('GATEWAY_PORT', 3000));
+  }
+
   static getConfiguration() {
     const ENV = Configuration.getEnvName();
     return {
@@ -314,6 +322,10 @@ class Configuration {
           S3_PRIVATE_BUCKET: Configuration.getS3PrivateBucket(),
           S3_PUBLIC_BUCKET: Configuration.getS3PublicBucket(),
           S3_REGION: Configuration.getS3Region(),
+        },
+        redis: {
+          GATEWAY_PORT: Configuration.getGatewayPort(),
+          REDIS_URL: Configuration.getRedisUrl(),
         },
       },
       mail: {

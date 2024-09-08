@@ -76,6 +76,7 @@ import { ApiDocumentationModule } from '../../../libs/api-documentation/api-docu
     PostgresConfig,
     ...appProviders,
   ],
+  exports: [CustomConfigModule],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {

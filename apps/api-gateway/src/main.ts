@@ -1,14 +1,25 @@
 import { NestFactory } from '@nestjs/core';
 import { ApiGatewayModule } from './api-gateway.module';
 import { Transport } from '@nestjs/microservices';
+import { ConfigService } from '@nestjs/config';
+import { ConfigType } from '../../backend/src/config/configuration';
 
 async function bootstrap() {
   const app = await NestFactory.create(ApiGatewayModule);
 
+  const configService = app.get<ConfigService<ConfigType, true>>(ConfigService);
+
+  const redisUrl = configService.get<string>(`db.redis`, {
+    infer: true,
+  })['REDIS_URL'];
+  console.log(`Redis URL: ${redisUrl}`);
+
+  // const redisUrl = 'redis://localhost:6379';
+
   app.connectMicroservice({
     transport: Transport.REDIS,
     options: {
-      url: 'redis://localhost:6379',
+      url: redisUrl,
     },
   });
 
@@ -17,21 +28,3 @@ async function bootstrap() {
   await app.listen(3000); // Gateway listens on port 3000
 }
 bootstrap();
-
-// import { NestFactory } from '@nestjs/core';
-// import { ApiGatewayModule } from './api-gateway.module';
-// import { Transport } from '@nestjs/microservices';
-//
-// async function bootstrap() {
-//   const app = await NestFactory.create(ApiGatewayModule);
-//
-//   const port = process.env.PORT || 5001;
-//   // Start the application and listen on the specified port
-//   await app.listen(port, () => {
-//     console.log(`Api-gateway app listening on port: ${port}`);
-//   });
-//
-//   const baseUrl = await app.getUrl();
-//   console.log(`Application is running on url: ${baseUrl}`);
-// }
-// bootstrap();

@@ -96,6 +96,8 @@ export const validationSchemaConfiguration = Joi.object({
   STRIPE_WEBHOOK_SECRET: Joi.string().min(38).max(38).required(),
   RECAPTCHA_SITE_KEY: Joi.string().min(40).max(40).required(),
   RECAPTCHA_SECRET_KEY: Joi.string().min(40).max(40).required(),
+  GATEWAY_PORT: Joi.number().default(3000),
+  REDIS_URL: Joi.string().uri().required(),
 }).options({
   abortEarly: false,
   messages: {
