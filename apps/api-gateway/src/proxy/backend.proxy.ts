@@ -11,8 +11,11 @@ export class BackendProxy implements OnModuleInit {
 
   // Initialize the client during module initialization
   onModuleInit() {
-    const host = process.env.BACKEND_SERVICE_HOST || 'localhost';
-    const port = parseInt(process.env.BACKEND_SERVICE_PORT) || 3001;
+    // const host: string = process.env.BACKEND_SERVICE_HOST || 'localhost';
+    // const port: number = parseInt(process.env.BACKEND_SERVICE_PORT) || 3001;
+
+    const host: string = 'localhost';
+    const port: number = 3001;
 
     this.client = ClientProxyFactory.create({
       transport: Transport.TCP,

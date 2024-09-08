@@ -9,9 +9,10 @@ async function bootstrap() {
 
   const configService = app.get<ConfigService<ConfigType, true>>(ConfigService);
 
-  const redisUrl = configService.get<string>(`db.redis`, {
+  const redisUrl = configService.get<string>('db.redis.REDIS_URL', {
     infer: true,
-  })['REDIS_URL'];
+  });
+
   console.log(`Redis URL: ${redisUrl}`);
 
   // const redisUrl = 'redis://localhost:6379';

@@ -1,10 +1,10 @@
-import { Controller, Get, Param, Res, HttpStatus } from '@nestjs/common';
 import { Response } from 'express';
 import { PaymentServiceProxy } from '../../proxy/payment-service.proxy';
 import { FrontendProxy } from '../../proxy/frontend.proxy';
 import { BackendProxy } from '../../proxy/backend.proxy';
 import { firstValueFrom, retry, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { Controller, Get, HttpStatus, Param, Res } from '@nestjs/common';
 
 @Controller()
 export class ApiGatewayController {
@@ -21,7 +21,7 @@ export class ApiGatewayController {
   ) {
     const client = this.paymentServiceProxy.getClient();
     try {
-      const data = await client.send({ cmd: action }, {}).toPromise();
+      const data = await firstValueFrom(client.send({ cmd: action }, {})); // Replace .toPromise()
       res.send(data);
     } catch (err) {
       console.error('Error handling payment request:', err);

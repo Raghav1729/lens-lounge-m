@@ -3611,7 +3611,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/cli@npm:^10.3.2":
+"@nestjs/cli@npm:^10.3.2, @nestjs/cli@npm:^10.4.5":
   version: 10.4.5
   resolution: "@nestjs/cli@npm:10.4.5"
   dependencies:
@@ -14404,7 +14404,7 @@ __metadata:
     "@casl/ability": "npm:^6.5.0"
     "@nestjs-modules/mailer": "npm:1.10.3"
     "@nestjs/axios": "npm:^3.0.2"
-    "@nestjs/cli": "npm:^10.3.2"
+    "@nestjs/cli": "npm:^10.4.5"
     "@nestjs/common": "npm:^10.3.3"
     "@nestjs/config": "npm:^3.2.0"
     "@nestjs/core": "npm:^10.3.3"
@@ -17115,7 +17115,7 @@ __metadata:
     "@casl/ability": "npm:^6.5.0"
     "@nestjs-modules/mailer": "npm:1.10.3"
     "@nestjs/axios": "npm:^3.0.2"
-    "@nestjs/cli": "npm:^10.3.2"
+    "@nestjs/cli": "npm:^10.4.5"
     "@nestjs/common": "npm:^10.3.3"
     "@nestjs/config": "npm:^3.2.0"
     "@nestjs/core": "npm:^10.3.3"

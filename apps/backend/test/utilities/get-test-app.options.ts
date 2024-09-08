@@ -2,10 +2,10 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppModule } from '../../src/app.module';
-import { createApp } from '../../src/create-app';
 import { DataSource } from 'typeorm';
 import Configuration from '../../src/config/configuration';
 import { TypeOrmPostgresOptions } from '../../src/db/type-orm/options/type-orm-postgres.options';
+import { createApp } from '../../create-app';
 
 const ownerNameDb =
   Configuration.getConfiguration().db.postgres.PG_HEROKU_USER_NAME;
