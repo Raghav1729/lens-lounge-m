@@ -14,6 +14,7 @@ export class ApiGatewayController {
     private readonly backendProxy: BackendProxy,
   ) {}
 
+  // Handle payment requests
   @Get('api/payments/:action')
   async handlePaymentRequests(
     @Param('action') action: string,
@@ -21,7 +22,7 @@ export class ApiGatewayController {
   ) {
     const client = this.paymentServiceProxy.getClient();
     try {
-      const data = await firstValueFrom(client.send({ cmd: action }, {})); // Replace .toPromise()
+      const data = await firstValueFrom(client.send({ cmd: action }, {}));
       res.send(data);
     } catch (err) {
       console.error('Error handling payment request:', err);
@@ -32,6 +33,7 @@ export class ApiGatewayController {
     }
   }
 
+  // Handle backend requests with retry logic
   @Get('api/backend/:action')
   handleBackendRequests(@Param('action') action: string, @Res() res: Response) {
     console.log('Handling backend request');
@@ -48,18 +50,21 @@ export class ApiGatewayController {
       )
       .subscribe({
         next: (data) => res.send(data),
-        error: (err) => res.status(500).send(err.message),
+        error: (err) =>
+          res.status(HttpStatus.INTERNAL_SERVER_ERROR).send(err.message),
       });
   }
 
+  // Handle frontend requests
   @Get('*')
   async handleFrontendRequests(@Param() params: any, @Res() res: Response) {
-    const url = params[0];
+    const url = params[0]; // Access the wildcard route parameter
     try {
+      // Fetching frontend content
       const response = await firstValueFrom(
         this.frontendProxy.getFrontendContent(url),
       );
-      res.send(response.data);
+      res.send(response.data); // Sending the frontend content response
     } catch (err) {
       console.error('Error handling frontend-microservice request:', err);
       res.status(HttpStatus.INTERNAL_SERVER_ERROR).send({
