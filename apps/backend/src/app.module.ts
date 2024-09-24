@@ -17,10 +17,8 @@ import { BloggerBlogsModule } from './features/blogger-blogs/blogger-blogs.modul
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ThrottlerOptions } from './config/throttle/throttler-options';
 import { HttpLoggingMiddleware } from './middlewares/http-logging.middleware';
-import { CustomConfigModule } from './config/custom.config-module';
 import { SaQuizQuestionsModule } from './features/sa-quiz-questions/sa-quiz-questions.module';
 import { PairGameQuizModule } from './features/pair-game-quiz/pair-game-quiz.module';
-import { TypeOrmPostgresOptions } from './db/type-orm/options/type-orm-postgres.options';
 import { TelegramModule } from './features/telegram/telegram.module';
 import { TelegramConfig } from './config/telegram/telegram.config';
 import { PostgresConfig } from './config/db/postgres/postgres.config';
@@ -29,10 +27,12 @@ import { ProductsModule } from './features/products/products.module';
 import { TelegramAdapter } from './adapters/telegram/telegram.adapter';
 import { MessagesModule } from './features/messages/messages.module';
 import { SocketModule } from './socket/socket.module';
+import { TypeOrmPostgresOptions } from './db/type-orm/options/type-orm-postgres.options';
+import { CustomConfigModule } from './config/custom.config-module';
+import { LibsModule } from '../../../libs/libs.module';
 import { StripeModule } from '../../payment-service/src/payment-systems/stripe/stripe.module';
 import { PayPalModule } from '../../payment-service/src/payment-systems/pay-pal/pay-pal.module';
 import { PaymentServiceModule } from '../../payment-service/src/payment-service.module';
-import { LibsModule } from '../../../libs/libs.module';
 import { ApiDocumentationModule } from '../../../libs/api-documentation/api-documentation.module';
 
 @Module({
@@ -76,7 +76,7 @@ import { ApiDocumentationModule } from '../../../libs/api-documentation/api-docu
     PostgresConfig,
     ...appProviders,
   ],
-  exports: [CustomConfigModule],
+  exports: [CustomConfigModule, TypeOrmPostgresOptions],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {

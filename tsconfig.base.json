@@ -28,12 +28,12 @@
     "@apps/frontend/*": ["apps/frontend/src/*"],
     "@apps/backend/*": ["apps/backend/src/*"],
     "@apps/payment-service/*": ["apps/payment-service/src/*"],
+    "@libs/api-documentation/*": ["libs/api-documentation/*"],
+    "@libs/common/*": ["libs/common/*"],
+    "@libs/data-cleanup/*": ["libs/data-cleanup/*"],
     "@libs/rabbitmq/*": ["libs/rabbitmq/src/*"],
-    "@libs/common/*": ["libs/common/src/*"],
-    "@libs/api-documentation/*": ["libs/api-documentation/src/*"],
-    "@libs/data-cleanup/*": ["libs/data-cleanup/src/*"],
-    "@libs/mails/*": ["libs/mails/src/*"],
-    "@libs/scheduling/*": ["libs/scheduling/src/*"]
+    "@libs/mails/*": ["libs/mails/*"],
+    "@libs/scheduling/*": ["libs/scheduling/*"]
   },
   "include": ["apps/**/*.ts", "libs/**/*.ts"],
   "exclude": ["node_modules", "dist"]

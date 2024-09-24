@@ -1,7 +1,6 @@
 {
   "extends": "../tsconfig.base.json",
   "module": "commonjs",
-  "target": "es2017",
   "moduleResolution": "node",
   "emitDecoratorMetadata": true,
   "experimentalDecorators": true,

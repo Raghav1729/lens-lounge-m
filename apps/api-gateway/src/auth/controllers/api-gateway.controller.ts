@@ -1,10 +1,9 @@
-import { Response } from 'express';
 import { PaymentServiceProxy } from '../../proxy/payment-service.proxy';
 import { FrontendProxy } from '../../proxy/frontend.proxy';
 import { BackendProxy } from '../../proxy/backend.proxy';
-import { firstValueFrom, retry, throwError } from 'rxjs';
+import { firstValueFrom, retry } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Controller, Get, HttpStatus, Param, Res } from '@nestjs/common';
+import { Controller, Get, HttpStatus, Param } from '@nestjs/common';
 
 @Controller()
 export class ApiGatewayController {
@@ -16,61 +15,50 @@ export class ApiGatewayController {
 
   // Handle payment requests
   @Get('api/payments/:action')
-  async handlePaymentRequests(
-    @Param('action') action: string,
-    @Res() res: Response,
-  ) {
+  async handlePaymentRequests(@Param('action') action: string) {
     const client = this.paymentServiceProxy.getClient();
     try {
-      const data = await firstValueFrom(client.send({ cmd: action }, {}));
-      res.send(data);
+      return await firstValueFrom(client.send({ cmd: action }, {}));
     } catch (err) {
       console.error('Error handling payment request:', err);
-      res.status(HttpStatus.INTERNAL_SERVER_ERROR).send({
+      return {
+        statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
         message: 'Failed to process payment request',
         error: err.message,
-      });
+      };
     }
   }
 
   // Handle backend requests with retry logic
   @Get('api/backend/:action')
-  handleBackendRequests(@Param('action') action: string, @Res() res: Response) {
-    console.log('Handling backend request');
+  handleBackendRequests(@Param('action') action: string) {
     const client = this.backendProxy.getClient();
 
-    client
-      .send({ cmd: action }, {})
-      .pipe(
-        retry(3), // Retry 3 times before failing
-        catchError((error) => {
-          console.error('Error handling backend request:', error);
-          return throwError(() => new Error('Backend service is unreachable'));
-        }),
-      )
-      .subscribe({
-        next: (data) => res.send(data),
-        error: (err) =>
-          res.status(HttpStatus.INTERNAL_SERVER_ERROR).send(err.message),
-      });
+    return client.send({ cmd: action }, {}).pipe(
+      retry(3), // Retry 3 times before failing
+      catchError((error) => {
+        console.error('Error handling backend request:', error);
+        throw new Error('Backend service is unreachable');
+      }),
+    );
   }
 
   // Handle frontend requests
   @Get('*')
-  async handleFrontendRequests(@Param() params: any, @Res() res: Response) {
+  async handleFrontendRequests(@Param() params: any) {
     const url = params[0]; // Access the wildcard route parameter
     try {
-      // Fetching frontend content
       const response = await firstValueFrom(
         this.frontendProxy.getFrontendContent(url),
       );
-      res.send(response.data); // Sending the frontend content response
+      return response.data; // Return the frontend content response
     } catch (err) {
       console.error('Error handling frontend-microservice request:', err);
-      res.status(HttpStatus.INTERNAL_SERVER_ERROR).send({
+      return {
+        statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
         message: 'Failed to load frontend-microservice content',
         error: err.message,
-      });
+      };
     }
   }
 }

@@ -1,13 +1,10 @@
 import { Module } from '@nestjs/common';
-import { CommonService } from './common.service';
-import { JsonUtils } from './helpers/json-utils';
 import { UuidErrorResolver } from './helpers/uuid-error-resolver';
 import { KeyResolver } from './helpers/key-resolver';
 import { PaginatorDto } from './helpers/paginator.dto';
 import { BlogExistValidationPipe } from './pipes/blog-exist-validation.pipe';
 import { FileValidationPipe } from './pipes/file-validation.pipe';
 import { PostExistValidationPipe } from './pipes/post-exist-validation.pipe';
-import { TrimPipe } from './pipes/trim.pipe';
 import { BlogExistsValidator } from './validators/blog-exists.validator';
 import { CodeExistsValidator } from './validators/code-exists.validator';
 import { EmailAndLoginNotExistValidator } from './validators/email-and-login-not-exist.validator';
@@ -29,6 +26,9 @@ import { ChallengesQuestionsRepo } from '../../../apps/backend/src/features/pair
 import { ChallengeQuestionsEntity } from '../../../apps/backend/src/features/pair-game-quiz/entities/challenge-questions.entity';
 import { GameQuestionsRepo } from '../../../apps/backend/src/features/pair-game-quiz/infrastructure/game-questions.repo';
 import { QuestionsQuizEntity } from '../../../apps/backend/src/features/sa-quiz-questions/entities/questions-quiz.entity';
+import { JsonUtils } from './helpers/json-utils';
+import { TrimPipe } from './pipes/trim.pipe';
+import { CommonService } from './common.service';
 
 const validators = [
   IsArrayValidator,

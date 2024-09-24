@@ -5,9 +5,9 @@
   "author": "Serge Hall",
   "private": true,
   "license": "It_Incubator",
-  "packageManager": "yarn@4.4.1",
+  "packageManager": "yarn@4.5.0",
   "engines": {
-    "yarn": "4.4.1",
+    "yarn": "4.5.0",
     "npm": "10.8.3",
     "node": "20.17.0"
   },
@@ -90,7 +90,7 @@
     "sharp": "^0.33.2",
     "string-similarity-js": "^2.1.4",
     "stripe": "^14.21.0",
-    "typeorm": "0.3.21-dev.e7649d2",
+    "typeorm": "^0.3.20",
     "uuid4": "^2.0.3"
   },
   "devDependencies": {

@@ -5,9 +5,9 @@
   "author": "Serge Hall",
   "private": true,
   "license": "It_Incubator",
-  "packageManager": "yarn@4.4.1",
+  "packageManager": "yarn@4.5.0",
   "engines": {
-    "yarn": "4.4.1",
+    "yarn": "4.5.0",
     "npm": "10.8.3",
     "node": "20.17.0"
   },
@@ -63,6 +63,8 @@
     "@types/reflect-metadata": "^0.1.0",
     "@types/stripe": "^8.0.417",
     "@types/uuid4": "^2.0.3",
+    "amqp-connection-manager": "^4.1.14",
+    "amqplib": "^0.10.4",
     "axios": "^1.6.7",
     "bcrypt": "^5.1.1",
     "class-transformer": "^0.5.1",

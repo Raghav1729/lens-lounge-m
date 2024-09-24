@@ -2,9 +2,9 @@
   "name": "frontend",
   "version": "1.0.0",
   "private": true,
-  "packageManager": "yarn@4.4.1",
+  "packageManager": "yarn@4.5.0",
   "engines": {
-    "yarn": "4.4.1",
+    "yarn": "4.5.0",
     "npm": "10.8.3",
     "node": "20.17.0"
   },
@@ -13,6 +13,8 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "amqp-connection-manager": "^4.1.14",
+    "amqplib": "^0.10.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",

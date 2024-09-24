@@ -16,8 +16,8 @@ import { ProductsRepo } from '../../backend/src/features/products/infrastructure
 import { PaymentService } from './application/payment.service';
 import { PaymentServiceController } from './api/payment-service.controller';
 import { UuidErrorResolver } from '../../../libs/common/src/helpers/uuid-error-resolver';
-import { CustomConfigModule } from '../../backend/src/config/custom.config-module';
 import { TypeOrmPostgresOptions } from '../../backend/src/db/type-orm/options/type-orm-postgres.options';
+import { CustomConfigModule } from '../../backend/src/config/custom.config-module';
 
 const paymentUseCases = [BuyProductsUseCase];
 const paymentConfigs = [NodeEnvConfig, StripeConfig, PostgresConfig];

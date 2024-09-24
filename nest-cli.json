@@ -5,7 +5,7 @@
   "compilerOptions": {
     "deleteOutDir": true,
     "webpack": true,
-    "tsConfigPath": "apps/backend/tsconfig.backend.json"
+    "tsConfigPath": "tsconfig.base.json"
   },
   "monorepo": true,
   "root": "apps/backend",
@@ -16,7 +16,7 @@
       "entryFile": "main",
       "sourceRoot": "apps/backend/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/backend/tsconfig.backend.json"
+        "tsConfigPath": "apps/backend/tsconfig.json"
       }
     },
     "api-gateway": {
@@ -25,7 +25,7 @@
       "entryFile": "main",
       "sourceRoot": "apps/api-gateway/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/api-gateway/tsconfig.api-gateway.json"
+        "tsConfigPath": "apps/api-gateway/tsconfig.json"
       }
     },
     "payment-service": {
@@ -34,7 +34,7 @@
       "entryFile": "main",
       "sourceRoot": "apps/payment-service/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/payment-service/tsconfig.payment-service.json"
+        "tsConfigPath": "apps/payment-service/tsconfig.json"
       }
     },
     "frontend": {
@@ -48,11 +48,11 @@
     },
     "libs": {
       "type": "application",
-      "root": "apps/libs",
+      "root": "libs",
       "entryFile": "main",
-      "sourceRoot": "apps/libs/src",
+      "sourceRoot": "libs/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/libs/tsconfig.libs.json"
+        "tsConfigPath": "libs/tsconfig.json"
       }
     }
   }
