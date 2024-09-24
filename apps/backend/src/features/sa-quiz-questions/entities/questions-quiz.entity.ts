@@ -4,6 +4,7 @@ import {
   Column,
   OneToMany,
   Unique,
+  ManyToOne,
 } from 'typeorm';
 import { ComplexityEnums } from '../../pair-game-quiz/enums/complexity.enums';
 import { ChallengeQuestionsEntity } from '../../pair-game-quiz/entities/challenge-questions.entity';
@@ -54,7 +55,7 @@ export class QuestionsQuizEntity {
   })
   topic: string;
 
-  @OneToMany(() => PairsGameEntity, (pairGame) => pairGame.id)
+  @ManyToOne(() => PairsGameEntity, (pairGame) => pairGame.id)
   pairGame: PairsGameEntity;
 
   @OneToMany(

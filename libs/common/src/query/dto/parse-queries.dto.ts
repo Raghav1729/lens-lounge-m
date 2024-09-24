@@ -1,8 +1,8 @@
 import { IsString, IsNumber, IsEnum, IsInt } from 'class-validator';
 import { PublishedStatusEnum } from '../enums/published-status.enum';
-import { SortDirectionEnum } from '../enums/sort-direction.enum';
-import { BanCondition } from '../types/ban-condition.type';
 import { SortType } from '../types/sort.type';
+import { BanCondition } from '../types/ban-condition.type';
+import { SortDirectionEnum } from '../enums/sort-direction.enum';
 
 export class QueryPagination {
   @IsNumber()

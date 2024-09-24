@@ -90,7 +90,7 @@
     "sharp": "^0.33.2",
     "string-similarity-js": "^2.1.4",
     "stripe": "^14.21.0",
-    "typeorm": "^0.3.20",
+    "typeorm": "0.3.21-dev.e7649d2",
     "uuid4": "^2.0.3"
   },
   "devDependencies": {
@@ -147,11 +147,11 @@
     "apps/api-gateway,",
     "apps/frontend",
     "apps/payment-service",
-    "libs/rabbitmq",
-    "libs/common",
     "libs/api-documentation",
+    "libs/common",
     "libs/data-cleanup",
     "libs/mails",
+    "libs/rabbitmq",
     "libs/scheduling"
   ]
 }

@@ -27,13 +27,13 @@ import { ProductsModule } from './features/products/products.module';
 import { TelegramAdapter } from './adapters/telegram/telegram.adapter';
 import { MessagesModule } from './features/messages/messages.module';
 import { SocketModule } from './socket/socket.module';
-import { TypeOrmPostgresOptions } from './db/type-orm/options/type-orm-postgres.options';
 import { CustomConfigModule } from './config/custom.config-module';
 import { LibsModule } from '../../../libs/libs.module';
 import { StripeModule } from '../../payment-service/src/payment-systems/stripe/stripe.module';
 import { PayPalModule } from '../../payment-service/src/payment-systems/pay-pal/pay-pal.module';
 import { PaymentServiceModule } from '../../payment-service/src/payment-service.module';
 import { ApiDocumentationModule } from '../../../libs/api-documentation/api-documentation.module';
+import { TypeOrmPostgresOptions } from './db/type-orm/options/type-orm-postgres.options'; // import { TypeOrmPostgresOptions } from './db/type-orm/options/type-orm-postgres.options';
 
 @Module({
   imports: [
@@ -76,7 +76,7 @@ import { ApiDocumentationModule } from '../../../libs/api-documentation/api-docu
     PostgresConfig,
     ...appProviders,
   ],
-  exports: [CustomConfigModule, TypeOrmPostgresOptions],
+  exports: [CustomConfigModule],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
