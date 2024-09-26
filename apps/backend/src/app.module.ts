@@ -32,8 +32,8 @@ import { LibsModule } from '../../../libs/libs.module';
 import { StripeModule } from '../../payment-service/src/payment-systems/stripe/stripe.module';
 import { PayPalModule } from '../../payment-service/src/payment-systems/pay-pal/pay-pal.module';
 import { PaymentServiceModule } from '../../payment-service/src/payment-service.module';
-import { ApiDocumentationModule } from '../../../libs/api-documentation/api-documentation.module';
-import { TypeOrmPostgresOptions } from './db/type-orm/options/type-orm-postgres.options'; // import { TypeOrmPostgresOptions } from './db/type-orm/options/type-orm-postgres.options';
+import { TypeOrmPostgresOptions } from './db/type-orm/options/type-orm-postgres.options';
+import { ApiDocumentationModule } from '@libs/api-documentation/api-documentation.module'; // import { TypeOrmPostgresOptions } from './db/type-orm/options/type-orm-postgres.options';
 
 @Module({
   imports: [
