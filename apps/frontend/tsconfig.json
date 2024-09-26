@@ -1,9 +1,10 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../dist/apps/api-gateway",
+    "jsx": "react-jsx",
+    "outDir": "../../dist/apps/frontend",
     "rootDir": "./src"
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "public/**/*"],
   "exclude": ["node_modules", "dist"]
 }

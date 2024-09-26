@@ -1,40 +1,31 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "declaration": true,
     //"strict": true, // If you want to humiliate yourself and realize you wrote crappy code, comment on this.
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
+    "target": "ES2020",
+    "module": "CommonJS",
+    "lib": ["ES2020", "DOM"],
     "allowSyntheticDefaultImports": true,
-    "target": "es2022",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "incremental": true,
-    "skipLibCheck": true,
-    "strictNullChecks": true,
+    "esModuleInterop": true,
     "noImplicitAny": true,
-    "strictBindCallApply": true,
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "lib": [
-      "es2022",
-      "dom"
-    ]
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "baseUrl": "./",
+    "paths": {
+      "@apps/frontend/*": ["apps/frontend/src/*"],
+      "@apps/backend/*": ["apps/backend/src/*"],
+      "@apps/payment-service/*": ["apps/payment-service/src/*"],
+      "@libs/api-documentation/*": ["libs/api-documentation/*"],
+      "@libs/common/*": ["libs/common/*"],
+      "@libs/data-cleanup/*": ["libs/data-cleanup/*"],
+      "@libs/rabbitmq/*": ["libs/rabbitmq/src/*"],
+      "@libs/mails/*": ["libs/mails/*"],
+      "@libs/scheduling/*": ["libs/scheduling/*"]
+    }
   },
-  "paths": {
-    "@apps/frontend/*": ["apps/frontend/src/*"],
-    "@apps/backend/*": ["apps/backend/src/*"],
-    "@apps/payment-service/*": ["apps/payment-service/src/*"],
-    "@libs/api-documentation/*": ["libs/api-documentation/*"],
-    "@libs/common/*": ["libs/common/*"],
-    "@libs/data-cleanup/*": ["libs/data-cleanup/*"],
-    "@libs/rabbitmq/*": ["libs/rabbitmq/src/*"],
-    "@libs/mails/*": ["libs/mails/*"],
-    "@libs/scheduling/*": ["libs/scheduling/*"]
-  },
-  "include": ["apps/**/*.ts", "libs/**/*.ts"],
+  "include": ["apps/**/*", "libs/**/*"],
   "exclude": ["node_modules", "dist"]
 }
