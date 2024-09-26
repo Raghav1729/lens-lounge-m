@@ -1,10 +1,15 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "outDir": "../../dist/apps/frontend",
-    "rootDir": "./src"
+    "jsx": "react-jsx",  // Ensures that JSX syntax is handled correctly by React 17+.
+    "outDir": "../../dist/apps/frontend-microservice",
+    "rootDir": "./src",
+    "baseUrl": ".",
+    "paths": {
+      "@common/*": ["../../libs/common/src/*"],
+      "@libs/*": ["../../libs/*"]
+    }
   },
-  "include": ["src/**/*", "public/**/*"],
+  "include": ["src/**/*", "public/**/*", "../../libs/**/*"],
   "exclude": ["node_modules", "dist"]
 }

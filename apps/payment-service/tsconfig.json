@@ -2,8 +2,13 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "../../dist/apps/payment-service",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "baseUrl": ".",
+    "paths": {
+      "@common/*": ["../../libs/common/src/*"],
+      "@libs/*": ["../../libs/*"]
+    }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "../../libs/**/*"],
   "exclude": ["node_modules", "dist"]
 }

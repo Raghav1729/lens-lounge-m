@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    //"strict": true, // If you want to humiliate yourself and realize you wrote crappy code, comment on this.
+    // "strict": true, // If you want to humiliate yourself and realize you wrote crappy code, comment on this.
     "target": "ES2020",
     "module": "CommonJS",
     "lib": ["ES2020", "DOM"],
@@ -12,12 +12,15 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "noEmit": true,
     "baseUrl": "./",
     "paths": {
       "@apps/frontend/*": ["apps/frontend/src/*"],
       "@apps/backend/*": ["apps/backend/src/*"],
       "@apps/payment-service/*": ["apps/payment-service/src/*"],
+      "@libs/*": ["libs/*"],
       "@libs/api-documentation/*": ["libs/api-documentation/*"],
       "@libs/common/*": ["libs/common/*"],
       "@libs/data-cleanup/*": ["libs/data-cleanup/*"],

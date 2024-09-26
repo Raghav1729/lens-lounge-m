@@ -37,21 +37,21 @@
         "tsConfigPath": "apps/payment-service/tsconfig.json"
       }
     },
-    "frontend": {
+    "frontend-microservice": {
       "type": "application",
-      "root": "apps/frontend",
-      "entryFile": "main",
-      "sourceRoot": "apps/frontend/src",
+      "root": "apps/frontend-microservice",
+      "entryFile": "index",
+      "sourceRoot": "apps/frontend-microservice/src",
       "compilerOptions": {
         "tsConfigPath": "apps/frontend/tsconfig.json"
       }
     },
-    "libs": {
+    "common": {
       "type": "library",
-      "root": "libs",
-      "sourceRoot": "libs",
+      "root": "libs/common",
+      "sourceRoot": "libs/common/src",
       "compilerOptions": {
-        "tsConfigPath": "libs/tsconfig.json"
+        "tsConfigPath": "libs/common/tsconfig.json"
       }
     }
   }
